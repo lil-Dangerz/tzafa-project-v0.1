@@ -20,7 +20,7 @@ Do not store project findings, raw logs, query results, evidence, or investigati
 
 | Prompt | Watch Role | Purpose | Default Authority |
 |---|---|---|---|
-| `mission-init.prompt.md` | Establish the Watch | Establish or refresh the Watch baseline. | Edits `CURRENT_MISSION.md`, `PROJECT_STATE.md`, `AI_CONTEXT.md` only |
+| `mission-init.prompt.md` | Establish the Watch | Establish or refresh the Watch baseline and propose follow-up context updates when durable context is discovered. | Edits `CURRENT_MISSION.md`, `PROJECT_STATE.md`, `AI_CONTEXT.md` only |
 | `watch-status.prompt.md` | Warden Status | Inspect current operational status. | Read-only |
 | `threat-map.prompt.md` | Threat Mapping | Analyze risks and blind spots without recommendations. | Read-only |
 | `context-audit.prompt.md` | Drift Sweep | Detect contradictions, stale context, and contamination risk. | Read-only |
@@ -111,6 +111,14 @@ closeout closes a mission or phase.
 5. Review the draft.
 6. Apply changes only after confirmation.
 
+If a prompt detects durable domain, vocabulary, system, topology, or external-reference context, route it into:
+
+```text
+Proposed Follow-Up File Updates
+```
+
+unless that prompt already has explicit authority to update the correct destination file.
+
 ## Standard Watch Discipline
 
 Every prompt should force the AI tool to separate:
@@ -121,6 +129,11 @@ Every prompt should force the AI tool to separate:
 - blind spots
 - open questions
 - proposed file updates
+
+When applicable, prompts should also distinguish between:
+
+- direct file updates allowed by current prompt authority
+- follow-up context updates that require later human-approved changes to `01_context/`
 
 ## Controlled File Rule
 
