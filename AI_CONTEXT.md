@@ -69,6 +69,16 @@ AI_HANDOFF.md
 TOOL_NOTES.md
 ```
 
+When durable background context matters, also read the relevant files from:
+
+```text
+01_context/DOMAIN_NOTES.md
+01_context/VOCABULARY.md
+01_context/SYSTEM_OVERVIEW.md
+01_context/TOPOLOGY.md
+01_context/CONTEXT_INDEX.md
+```
+
 ## Project Summary
 
 `[Write a short summary of the project.]`
@@ -128,6 +138,7 @@ AI tools must:
 - avoid treating drafts as validated work
 - check registries before reusing queries
 - check deprecated evidence before using old artifacts
+- propose follow-up `01_context/` updates when durable background context is discovered
 - record important outputs back into project files
 - preserve uncertainty when evidence is incomplete
 

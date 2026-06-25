@@ -51,6 +51,16 @@ AI_CONTEXT.md
 AI_HANDOFF.md
 ```
 
+When durable background context matters, also read the relevant files from:
+
+```text
+01_context/DOMAIN_NOTES.md
+01_context/VOCABULARY.md
+01_context/SYSTEM_OVERVIEW.md
+01_context/TOPOLOGY.md
+01_context/CONTEXT_INDEX.md
+```
+
 Then continue from the `Current Active Handoff`.
 
 If the handoff conflicts with `PROJECT_STATE.md`, treat `PROJECT_STATE.md` as the higher authority and flag the conflict.
@@ -66,6 +76,10 @@ At the end of a session, update this file with:
 - warnings or mistakes to avoid
 - exact next task
 - recommended files for the next session to read
+
+If durable background context was discovered during the session, do not silently treat it as project truth.
+
+Instead, propose a follow-up update to the correct `01_context/` file.
 
 Refresh `Current Active Handoff`.
 
@@ -126,6 +140,10 @@ Append one short row to `Handoff History`.
 
 - `[Warning 1]`
 - `[Warning 2]`
+
+### Proposed Context Follow-Ups
+
+- `[If durable domain, vocabulary, system, or topology context was discovered, name the target 01_context file and the reason. Otherwise write None.]`
 
 ### Exact Next Action
 

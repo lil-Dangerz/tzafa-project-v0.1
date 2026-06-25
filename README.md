@@ -130,6 +130,16 @@ The preferred way to populate them is to use:
 prompts/mission-init.prompt.md
 ```
 
+`mission-init.prompt.md` may detect durable context needs during initialization, but it must not directly edit `01_context/`.
+
+If durable domain, vocabulary, system, topology, or external-reference context is discovered, route it into:
+
+```text
+Proposed Follow-Up File Updates
+```
+
+for later human-approved updates to `01_context/`.
+
 After that, register evidence, queries, notebooks, reports, outputs, and decisions as they are created.
 
 ## How to Use With ChatGPT
@@ -167,6 +177,21 @@ For repeated tool mistakes or tool-specific warnings, also provide:
 TOOL_NOTES.md
 ```
 
+If durable background context matters, also provide the relevant files from:
+
+```text
+01_context/
+```
+
+Examples:
+
+```text
+01_context/DOMAIN_NOTES.md
+01_context/VOCABULARY.md
+01_context/SYSTEM_OVERVIEW.md
+01_context/TOPOLOGY.md
+```
+
 Tell the chat:
 
 ```text
@@ -184,6 +209,12 @@ CURRENT_MISSION.md
 AI_HANDOFF.md
 ```
 
+If the task depends on durable background context, also read the relevant files from:
+
+```text
+01_context/
+```
+
 Codex should write durable outputs into the project folder, not only into chat.
 
 Queries created or modified by Codex must be registered in:
@@ -191,6 +222,8 @@ Queries created or modified by Codex must be registered in:
 ```text
 03_queries/QUERY_REGISTRY.md
 ```
+
+When Codex discovers durable domain, vocabulary, system, or topology context, it should propose an update to the correct `01_context/` file instead of silently editing context files.
 
 Codex may edit controlled files only when explicitly instructed.
 
@@ -460,7 +493,7 @@ Use the registry to identify:
 ```text
 prompts/        Reusable AI operating prompts.
 00_control/     Work logs, risks, open questions, tactical decisions.
-01_context/     Company, project, domain, system, and architecture context.
+01_context/     Durable background context: domain notes, vocabulary, system overview, and topology.
 02_evidence/    Logs, screenshots, exports, configs, samples, schemas, references.
 03_queries/     Query library, query registry, validation and deprecation tracking.
 04_notebooks/   Jupyter notebooks, Quarto docs, notebook indexes, data references.
@@ -525,6 +558,18 @@ prompts/query-review.prompt.md
 prompts/handoff.prompt.md
 prompts/handon.prompt.md
 ```
+
+Useful follow-up context files after initialization:
+
+```text
+01_context/DOMAIN_NOTES.md
+01_context/VOCABULARY.md
+01_context/SYSTEM_OVERVIEW.md
+01_context/TOPOLOGY.md
+01_context/CONTEXT_INDEX.md
+```
+
+These files may be proposed during initialization when durable context is detected, but they should be updated only through a later human-approved checkpoint.
 
 Then update these as needed:
 

@@ -50,6 +50,8 @@ Proposed Follow-Up File Updates
 
 and stop for confirmation.
 
+This prompt must not directly edit `01_context/`.
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.
@@ -93,6 +95,50 @@ If evidence is missing, mark the field as:
 ```
 
 Do not silently fill unknown fields with guesses.
+
+## Context Discovery Check
+
+During initialization, inspect the supplied project description, files, evidence summaries, and user-declared facts for durable context.
+
+Durable context may include:
+
+```text
+domain knowledge
+business rules
+vocabulary or acronyms
+system overview details
+topology or data-flow details
+external documentation references
+stable operational constraints
+```
+
+Do not edit `01_context/` files directly.
+
+If durable context is found, list proposed updates under:
+
+```text
+Proposed Follow-Up File Updates
+```
+
+Possible target files:
+
+```text
+01_context/DOMAIN_NOTES.md
+01_context/VOCABULARY.md
+01_context/SYSTEM_OVERVIEW.md
+01_context/TOPOLOGY.md
+01_context/CONTEXT_INDEX.md
+```
+
+For each proposed update, include:
+
+```text
+- Proposed target file:
+- Proposed summary:
+- Source / reference:
+- Reason this is durable context:
+- Validation needed: Yes/No/Unknown
+```
 
 ## Required File Drafts
 
