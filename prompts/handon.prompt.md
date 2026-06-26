@@ -12,6 +12,28 @@ Use this prompt at the start of a receiving session when work is continuing from
 
 This prompt is read-only by default. Do not update files from this prompt. If files appear to need updates, list them under `Proposed Follow-Up File Updates`.
 
+## Recommended Supporting Files
+
+When available, also read:
+
+- `CURRENT_MISSION.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+- `TOOL_NOTES.md`
+- `01_context/CONTEXT_INDEX.md`
+- `02_evidence/EVIDENCE_INDEX.md`
+- `02_evidence/DEPRECATED_EVIDENCE.md`
+- `03_queries/QUERY_REGISTRY.md`
+- `04_notebooks/NOTEBOOK_INDEX.md`
+- `05_reports/REPORT_INDEX.md`
+- `06_outputs/OUTPUT_INDEX.md`
+- `00_control/DECISION_LOG.md`
+- `07_decisions/ARCHITECTURE_DECISIONS.md`
+- `08_workbench/README.md`
+- `09_archive/README.md`
+- `10_automation/README.md`
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.
@@ -37,15 +59,17 @@ If information is missing, mark it as:
 Before continuing work, check:
 
 - whether `AI_HANDOFF.md` contains a current active handoff
-- whether the handoff status is open, blocked, complete, stale, or superseded
+- whether the handoff status is open, in progress, blocked, complete, stale, or superseded
 - whether the relay task is clear
 - whether the receiving role/tool is correct
 - whether required files are listed and supplied
 - whether the handoff aligns with `CURRENT_MISSION.md`
 - whether the handoff conflicts with `PROJECT_STATE.md`
 - whether the handoff conflicts with `AI_CONTEXT.md`
+- whether durable background context files are needed for this relay
 - whether `TOOL_NOTES.md` contains warnings relevant to the relay
 - whether deprecated evidence or deprecated queries are referenced
+- whether workbench, archive, or automation files are relevant to the relay but omitted
 - whether blockers or open questions prevent continuation
 
 ## Relay Acceptance Status

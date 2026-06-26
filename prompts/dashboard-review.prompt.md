@@ -12,6 +12,19 @@ Use this prompt when dashboards, visualizations, panels, monitoring surfaces, or
 
 This prompt is read-only by default. It may inspect supplied dashboard screenshots, exports, panel descriptions, and supporting project files. Do not update files from this prompt.
 
+## Recommended Supporting Files
+
+When available, also read:
+
+- `02_evidence/EVIDENCE_INDEX.md`
+- `02_evidence/DEPRECATED_EVIDENCE.md`
+- `03_queries/QUERY_REGISTRY.md`
+- `04_notebooks/NOTEBOOK_INDEX.md`
+- `05_reports/README.md`
+- `05_reports/REPORT_INDEX.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.

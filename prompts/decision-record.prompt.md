@@ -12,6 +12,18 @@ Use this prompt when a decision must be recorded as durable project history. Thi
 
 This prompt may draft or update only `00_control/DECISION_LOG.md` and `07_decisions/ARCHITECTURE_DECISIONS.md`. It may read supporting files when provided. Do not update other files from this prompt.
 
+## Recommended Supporting Files
+
+When available, also read:
+
+- `00_control/DECISION_LOG.md`
+- `07_decisions/README.md`
+- `07_decisions/ARCHITECTURE_DECISIONS.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+- supporting evidence, query, notebook, report, or output records when the decision depends on them
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.

@@ -12,6 +12,28 @@ Use this prompt when you need a strict current-state diagnostic of the project. 
 
 This prompt is read-only by default. It may read supplied project files. Do not edit files from this prompt. If files appear to need updates, list them under `Proposed Follow-Up File Updates`.
 
+## Recommended Supporting Files
+
+When available, also read:
+
+- `CURRENT_MISSION.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+- `TOOL_NOTES.md`
+- `01_context/CONTEXT_INDEX.md`
+- `02_evidence/EVIDENCE_INDEX.md`
+- `02_evidence/DEPRECATED_EVIDENCE.md`
+- `03_queries/QUERY_REGISTRY.md`
+- `04_notebooks/NOTEBOOK_INDEX.md`
+- `05_reports/REPORT_INDEX.md`
+- `06_outputs/OUTPUT_INDEX.md`
+- `00_control/DECISION_LOG.md`
+- `07_decisions/ARCHITECTURE_DECISIONS.md`
+- `08_workbench/README.md`
+- `09_archive/README.md`
+- `10_automation/README.md`
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.
@@ -40,11 +62,16 @@ Inspect available project files for:
 - current project truth
 - active handoff status
 - missing or stale AI context
+- missing or stale durable background context guidance
 - unresolved open questions
 - evidence status
 - deprecated evidence risk
 - query registry status
 - notebook/report/output status
+- tactical and strategic decision status
+- workbench promotion or cleanup status
+- archive reuse or closure-history risk
+- automation asset routing or registry-bypass risk
 - repeated tool mistakes
 - blockers
 - blind spots

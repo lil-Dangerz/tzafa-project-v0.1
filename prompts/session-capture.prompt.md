@@ -10,7 +10,26 @@ Use this prompt when a chat, tool session, notebook discussion, or investigation
 
 ## File Authority
 
-This prompt is read-only by default. It may read supporting files when provided. Do not edit files from this prompt. If durable updates are needed, list them under `Proposed File Updates`.
+This prompt is read-only by default. It may read supporting files when provided. Do not edit files from this prompt. If durable updates are needed, list them under `Proposed Follow-Up File Updates`.
+
+## Recommended Supporting Files
+
+When available, also read:
+
+- `CURRENT_MISSION.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+- `TOOL_NOTES.md`
+- `01_context/CONTEXT_INDEX.md`
+- `02_evidence/EVIDENCE_INDEX.md`
+- `02_evidence/DEPRECATED_EVIDENCE.md`
+- `03_queries/QUERY_REGISTRY.md`
+- `04_notebooks/NOTEBOOK_INDEX.md`
+- `05_reports/REPORT_INDEX.md`
+- `06_outputs/OUTPUT_INDEX.md`
+- `00_control/DECISION_LOG.md`
+- `07_decisions/ARCHITECTURE_DECISIONS.md`
 
 ## Prompt
 
@@ -47,7 +66,9 @@ Extract and classify:
 - evidence that appears deprecated, stale, replaced, conflicting, or untrusted
 - queries mentioned
 - queries that appear validated, broken, deprecated, or superseded
+- durable background context discoveries
 - notebook/report/output references
+- workbench/archive/automation references
 - repeated tool mistakes
 - action items
 - possible follow-up file updates

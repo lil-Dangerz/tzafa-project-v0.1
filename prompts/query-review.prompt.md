@@ -12,6 +12,14 @@ Use this prompt when queries must be reviewed, classified, registered, deprecate
 
 This prompt may draft or update only `03_queries/QUERY_REGISTRY.md`. It may read supporting files when provided. Do not update other files from this prompt.
 
+Useful supporting files may include:
+
+- `03_queries/README.md`
+- `02_evidence/EVIDENCE_INDEX.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.
@@ -62,6 +70,8 @@ Use one of:
 ## Validation Rule
 
 Do not mark a query as `validated` unless there is explicit confirmation from the user or supplied evidence showing that it works for its stated purpose. If written but not executed, mark `draft`. If executed but correctness is not confirmed, mark `tested`.
+
+When `03_queries/README.md` is available, use it as the layer guidance for what belongs in the query arsenal, how query status should be handled, and how query records differ from evidence, notebooks, outputs, and project truth.
 
 
 ## Required Response Format

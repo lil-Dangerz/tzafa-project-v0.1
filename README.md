@@ -155,6 +155,7 @@ AI_CONTEXT.md
 For evidence-heavy work, also provide:
 
 ```text
+02_evidence/README.md
 02_evidence/EVIDENCE_INDEX.md
 02_evidence/DEPRECATED_EVIDENCE.md
 ```
@@ -162,7 +163,66 @@ For evidence-heavy work, also provide:
 For query work, also provide:
 
 ```text
+03_queries/README.md
 03_queries/QUERY_REGISTRY.md
+```
+
+For notebook or Quarto work, also provide:
+
+```text
+04_notebooks/README.md
+04_notebooks/NOTEBOOK_INDEX.md
+```
+
+For dashboard review, panel review, or observability-surface analysis, also provide:
+
+```text
+02_evidence/EVIDENCE_INDEX.md
+02_evidence/DEPRECATED_EVIDENCE.md
+03_queries/QUERY_REGISTRY.md
+04_notebooks/NOTEBOOK_INDEX.md
+05_reports/README.md
+05_reports/REPORT_INDEX.md
+```
+
+For report work, also provide:
+
+```text
+05_reports/README.md
+05_reports/REPORT_INDEX.md
+```
+
+For output work, also provide:
+
+```text
+06_outputs/README.md
+06_outputs/OUTPUT_INDEX.md
+```
+
+For decision work, also provide:
+
+```text
+00_control/DECISION_LOG.md
+07_decisions/README.md
+07_decisions/ARCHITECTURE_DECISIONS.md
+```
+
+For workbench or experiment-staging work, also provide:
+
+```text
+08_workbench/README.md
+```
+
+For archive or closeout-history work, also provide:
+
+```text
+09_archive/README.md
+```
+
+For automation or helper-script work, also provide:
+
+```text
+10_automation/README.md
 ```
 
 For handoff continuation, also provide:
@@ -217,10 +277,80 @@ If the task depends on durable background context, also read the relevant files 
 
 Codex should write durable outputs into the project folder, not only into chat.
 
+If the task is primarily about evidence intake, evidence review, or evidence hygiene, also read:
+
+```text
+02_evidence/README.md
+```
+
 Queries created or modified by Codex must be registered in:
 
 ```text
 03_queries/QUERY_REGISTRY.md
+```
+
+If the task is primarily about query writing, query review, query validation, or query hygiene, also read:
+
+```text
+03_queries/README.md
+```
+
+If the task is primarily about notebook review, Quarto work, notebook reproducibility, or notebook hygiene, also read:
+
+```text
+04_notebooks/README.md
+04_notebooks/NOTEBOOK_INDEX.md
+```
+
+If the task is primarily about dashboard review, panel review, visualization review, or monitoring-surface analysis, also read:
+
+```text
+02_evidence/EVIDENCE_INDEX.md
+02_evidence/DEPRECATED_EVIDENCE.md
+03_queries/QUERY_REGISTRY.md
+04_notebooks/NOTEBOOK_INDEX.md
+05_reports/README.md
+05_reports/REPORT_INDEX.md
+```
+
+If the task is primarily about report drafting, report review, report publication status, or report hygiene, also read:
+
+```text
+05_reports/README.md
+05_reports/REPORT_INDEX.md
+```
+
+If the task is primarily about output review, output cleanup, output validation, or output hygiene, also read:
+
+```text
+06_outputs/README.md
+06_outputs/OUTPUT_INDEX.md
+```
+
+If the task is primarily about strategic decisions, architecture decisions, long-term design rules, or decision hygiene, also read:
+
+```text
+07_decisions/README.md
+07_decisions/ARCHITECTURE_DECISIONS.md
+00_control/DECISION_LOG.md
+```
+
+If the task is primarily about scratch cleanup, experiment staging, or temporary workbench material, also read:
+
+```text
+08_workbench/README.md
+```
+
+If the task is primarily about archive review, closure history, retired material, or archive hygiene, also read:
+
+```text
+09_archive/README.md
+```
+
+If the task is primarily about automation helpers, script organization, Docker or utility files, or automation hygiene, also read:
+
+```text
+10_automation/README.md
 ```
 
 When Codex discovers durable domain, vocabulary, system, or topology context, it should propose an update to the correct `01_context/` file instead of silently editing context files.
@@ -247,16 +377,34 @@ Notebook and Quarto work must be registered in:
 04_notebooks/NOTEBOOK_INDEX.md
 ```
 
+Before large notebook review, notebook cleanup, Quarto review, or reproducibility work, read:
+
+```text
+04_notebooks/README.md
+```
+
 Generated outputs should be saved under:
 
 ```text
 06_outputs/
 ```
 
+Important outputs should be registered in:
+
+```text
+06_outputs/OUTPUT_INDEX.md
+```
+
 Reports should be saved under:
 
 ```text
 05_reports/
+```
+
+Important reports should be registered in:
+
+```text
+05_reports/REPORT_INDEX.md
 ```
 
 Notebook outputs are allowed, but important outputs should still be indexed.
@@ -463,6 +611,14 @@ Evidence that is stale, replaced, shortened, suspicious, or no longer trusted mu
 02_evidence/DEPRECATED_EVIDENCE.md
 ```
 
+Before large evidence intake or evidence cleanup work, read:
+
+```text
+02_evidence/README.md
+```
+
+That file defines what belongs in the evidence layer, how evidence should be stored, and how it differs from context, queries, notebooks, outputs, and project truth.
+
 ## Query Rule
 
 Queries must not live only in chat.
@@ -487,6 +643,209 @@ Use the registry to identify:
 - broken queries
 - deprecated queries
 - superseded queries
+
+Before large query review or query cleanup work, read:
+
+```text
+03_queries/README.md
+```
+
+That file defines what belongs in the query layer, how query status should be handled, and how query records differ from evidence, notebooks, outputs, and project truth.
+
+## Notebook Rule
+
+Notebook and Quarto work must not live only in chat.
+
+Store or reference important notebook work under:
+
+```text
+04_notebooks/
+```
+
+Track notebook status in:
+
+```text
+04_notebooks/NOTEBOOK_INDEX.md
+```
+
+Use the notebook index to identify:
+
+- draft notebook work
+- working notebook work
+- validated notebook work
+- stale notebook work
+- deprecated notebook work
+
+Before large notebook review, notebook cleanup, Quarto review, or reproducibility work, read:
+
+```text
+04_notebooks/README.md
+```
+
+That file defines what belongs in the notebook layer, how notebook status should be handled, and how notebook records differ from evidence, queries, reports, outputs, and project truth.
+
+## Report Rule
+
+Reports must not live only in chat.
+
+Store or reference important reports under:
+
+```text
+05_reports/
+```
+
+Track report status in:
+
+```text
+05_reports/REPORT_INDEX.md
+```
+
+Use the report index to identify:
+
+- draft reports
+- in-review reports
+- approved reports
+- published reports
+- superseded reports
+- deprecated reports
+
+Before large report drafting, report review, report cleanup, or report publication work, read:
+
+```text
+05_reports/README.md
+```
+
+That file defines what belongs in the reports layer, how report status should be handled, and how report records differ from evidence, queries, notebooks, outputs, and project truth.
+
+## Output Rule
+
+Outputs must not live only in chat, notebook state, or temporary local sessions.
+
+Store or reference important outputs under:
+
+```text
+06_outputs/
+```
+
+Track output status in:
+
+```text
+06_outputs/OUTPUT_INDEX.md
+```
+
+Use the output index to identify:
+
+- draft outputs
+- working outputs
+- validated outputs
+- superseded outputs
+- deprecated outputs
+
+Before large output review, output cleanup, output validation, or output publication work, read:
+
+```text
+06_outputs/README.md
+```
+
+That file defines what belongs in the outputs layer, how output status should be handled, and how output records differ from evidence, queries, notebooks, reports, and project truth.
+
+## Decision Rule
+
+Strategic decisions must not live only in chat.
+
+Store or reference strategic decisions under:
+
+```text
+07_decisions/
+```
+
+Track strategic decision status in:
+
+```text
+07_decisions/ARCHITECTURE_DECISIONS.md
+```
+
+Track tactical or operational decisions in:
+
+```text
+00_control/DECISION_LOG.md
+```
+
+Use the strategic decision record to identify:
+
+- proposed architecture decisions
+- approved architecture decisions
+- active long-term decisions
+- superseded decisions
+- rejected or deferred decisions
+
+Before large strategic decision review, architecture review, or decision cleanup work, read:
+
+```text
+07_decisions/README.md
+```
+
+That file defines what belongs in the decisions layer, how strategic decision status should be handled, and how long-term decision records differ from tactical decisions, evidence, queries, notebooks, reports, outputs, and project truth.
+
+## Workbench Rule
+
+Workbench material must not be mistaken for durable project record.
+
+Use:
+
+```text
+08_workbench/
+```
+
+for scratch work, temporary experiments, and staging material only.
+
+Before large scratch cleanup, experiment review, or temporary workbench organization, read:
+
+```text
+08_workbench/README.md
+```
+
+That file defines what belongs in the workbench layer, how temporary material should be handled, and when it must be promoted into evidence, queries, notebooks, reports, outputs, decisions, archive, or project truth.
+
+## Archive Rule
+
+Archived material must not be mistaken for active project record.
+
+Use:
+
+```text
+09_archive/
+```
+
+for superseded, closed, deprecated, retired, or frozen historical material.
+
+Before large archive review, archive cleanup, closure bundling, or restore evaluation work, read:
+
+```text
+09_archive/README.md
+```
+
+That file defines what belongs in the archive layer, how archived material should be handled, and when archived items require explicit review or revalidation before reuse.
+
+## Automation Rule
+
+Automation assets must not live only in chat.
+
+Use:
+
+```text
+10_automation/
+```
+
+for scripts, Docker files, helpers, utilities, and automation-supporting assets.
+
+Before large automation review, helper-script cleanup, or automation organization work, read:
+
+```text
+10_automation/README.md
+```
+
+That file defines what belongs in the automation layer, how automation assets differ from prompts and durable project records, and how automation outputs must still be routed into their proper registries or ledgers.
 
 ## Folder Map
 

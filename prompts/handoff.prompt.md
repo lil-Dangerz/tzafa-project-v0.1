@@ -12,6 +12,28 @@ Use this prompt at the end of a session when work must continue in another chat 
 
 This prompt may draft or update only `AI_HANDOFF.md`. It may read supporting files when provided. It may propose `TOOL_NOTES.md` updates only. Do not update tool notes or other files from this prompt.
 
+## Recommended Supporting Files
+
+When available, also read:
+
+- `CURRENT_MISSION.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+- `TOOL_NOTES.md`
+- `01_context/CONTEXT_INDEX.md`
+- `02_evidence/EVIDENCE_INDEX.md`
+- `02_evidence/DEPRECATED_EVIDENCE.md`
+- `03_queries/QUERY_REGISTRY.md`
+- `04_notebooks/NOTEBOOK_INDEX.md`
+- `05_reports/REPORT_INDEX.md`
+- `06_outputs/OUTPUT_INDEX.md`
+- `00_control/DECISION_LOG.md`
+- `07_decisions/ARCHITECTURE_DECISIONS.md`
+- `08_workbench/README.md`
+- `09_archive/README.md`
+- `10_automation/README.md`
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.
@@ -47,7 +69,7 @@ Do not store raw evidence here. Do not store query libraries here. Do not store 
 
 ## Required Handoff Checks
 
-Before drafting the handoff, identify what was done, what changed, files created/modified/referenced, current blockers, warnings or mistakes to avoid, files the next session must read first, exact next task, whether the next session should run `handon.prompt.md`, whether the mission is continuing or closeout is needed, and whether `TOOL_NOTES.md` should receive a proposed update.
+Before drafting the handoff, identify what was done, what changed, files created/modified/referenced, current blockers, warnings or mistakes to avoid, files the next session must read first, exact next task, whether the next session should run `handon.prompt.md`, whether the mission is continuing or closeout is needed, whether durable background context follow-up should be proposed for `01_context/`, and whether `TOOL_NOTES.md` should receive a proposed update.
 
 
 ## Required Response Format

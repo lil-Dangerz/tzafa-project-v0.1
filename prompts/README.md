@@ -102,6 +102,66 @@ handon accepts incoming work.
 closeout closes a mission or phase.
 ```
 
+For dashboard review, panel review, or observability-surface analysis, provide:
+
+```text
+02_evidence/EVIDENCE_INDEX.md
+02_evidence/DEPRECATED_EVIDENCE.md
+03_queries/QUERY_REGISTRY.md
+04_notebooks/NOTEBOOK_INDEX.md
+05_reports/README.md
+05_reports/REPORT_INDEX.md
+PROJECT_STATE.md
+AI_CONTEXT.md
+```
+
+For notebook review, Quarto review, notebook cleanup, or reproducibility work, provide:
+
+```text
+04_notebooks/README.md
+04_notebooks/NOTEBOOK_INDEX.md
+```
+
+For report drafting, report review, report cleanup, or report publication work, provide:
+
+```text
+05_reports/README.md
+05_reports/REPORT_INDEX.md
+```
+
+For output review, output cleanup, output validation, or output publication work, provide:
+
+```text
+06_outputs/README.md
+06_outputs/OUTPUT_INDEX.md
+```
+
+For strategic decision review, architecture decision work, or decision cleanup, provide:
+
+```text
+00_control/DECISION_LOG.md
+07_decisions/README.md
+07_decisions/ARCHITECTURE_DECISIONS.md
+```
+
+For scratch cleanup, experiment staging, or temporary workbench review, provide:
+
+```text
+08_workbench/README.md
+```
+
+For archive review, closure bundling, or retired-material cleanup, provide:
+
+```text
+09_archive/README.md
+```
+
+For automation review, helper-script cleanup, or utility organization, provide:
+
+```text
+10_automation/README.md
+```
+
 ## How to Use a Prompt
 
 1. Open the prompt file.

@@ -38,6 +38,10 @@ This prompt may read supporting files when provided, including:
 - `02_evidence/EVIDENCE_INDEX.md`
 - `03_queries/QUERY_REGISTRY.md`
 - `04_notebooks/NOTEBOOK_INDEX.md`
+- `05_reports/REPORT_INDEX.md`
+- `06_outputs/OUTPUT_INDEX.md`
+- `00_control/DECISION_LOG.md`
+- `07_decisions/ARCHITECTURE_DECISIONS.md`
 - `00_control/OPEN_QUESTIONS.md`
 
 Do not update evidence indexes, query registries, notebook indexes, work logs, decision logs, handoffs, tool notes, or archives from this prompt.

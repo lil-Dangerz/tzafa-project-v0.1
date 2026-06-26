@@ -21,6 +21,9 @@ It should be aligned with:
 - relevant evidence indexes
 - relevant query registries
 - relevant notebook indexes
+- relevant report indexes
+- relevant output indexes
+- relevant decision records
 - `TOOL_NOTES.md`
 
 If this file conflicts with `PROJECT_STATE.md`, treat `PROJECT_STATE.md` as the higher authority.
@@ -46,6 +49,7 @@ AI_CONTEXT.md
 For evidence work, also read:
 
 ```text
+02_evidence/README.md
 02_evidence/EVIDENCE_INDEX.md
 02_evidence/DEPRECATED_EVIDENCE.md
 ```
@@ -53,13 +57,67 @@ For evidence work, also read:
 For query work, also read:
 
 ```text
+03_queries/README.md
 03_queries/QUERY_REGISTRY.md
 ```
 
 For notebook work, also read:
 
 ```text
+04_notebooks/README.md
 04_notebooks/NOTEBOOK_INDEX.md
+```
+
+For dashboard or observability-surface work, also read:
+
+```text
+02_evidence/README.md
+02_evidence/EVIDENCE_INDEX.md
+02_evidence/DEPRECATED_EVIDENCE.md
+03_queries/QUERY_REGISTRY.md
+04_notebooks/NOTEBOOK_INDEX.md
+05_reports/README.md
+05_reports/REPORT_INDEX.md
+```
+
+For report work, also read:
+
+```text
+05_reports/README.md
+05_reports/REPORT_INDEX.md
+```
+
+For output work, also read:
+
+```text
+06_outputs/README.md
+06_outputs/OUTPUT_INDEX.md
+```
+
+For decision work, also read:
+
+```text
+00_control/DECISION_LOG.md
+07_decisions/README.md
+07_decisions/ARCHITECTURE_DECISIONS.md
+```
+
+For workbench or experiment-staging work, also read:
+
+```text
+08_workbench/README.md
+```
+
+For archive or closeout-history work, also read:
+
+```text
+09_archive/README.md
+```
+
+For automation or helper-script work, also read:
+
+```text
+10_automation/README.md
 ```
 
 For tool handoff, also read:
@@ -136,8 +194,24 @@ AI tools must:
 - avoid relying on old chat memory
 - avoid treating examples as authoritative evidence
 - avoid treating drafts as validated work
+- read the evidence layer guidance before large evidence intake or evidence cleanup work
+- read the query layer guidance before large query review or query cleanup work
+- read the notebook layer guidance before large notebook review, notebook cleanup, Quarto review, or reproducibility work
+- read the report layer guidance before large report drafting, report review, report cleanup, or report publication work
+- read the output layer guidance before large output review, output cleanup, output validation, or output publication work
+- read the decisions layer guidance before large strategic decision review, architecture review, or decision cleanup work
+- read the workbench layer guidance before large scratch cleanup, experiment review, or temporary staging work
+- read the archive layer guidance before large archive review, archive cleanup, closure bundling, or restore evaluation work
+- read the automation layer guidance before large automation review, helper-script cleanup, or automation organization work
 - check registries before reusing queries
 - check deprecated evidence before using old artifacts
+- check notebook status and reproducibility notes before reusing notebook work
+- check report status and supporting references before reusing report work
+- check output status and source relationships before reusing outputs
+- check tactical and strategic decision status before relying on prior decision records
+- avoid treating workbench material as durable truth unless explicitly promoted
+- avoid treating archived material as active unless explicitly restored or revalidated
+- avoid letting automation outputs bypass the normal registries and ledgers
 - propose follow-up `01_context/` updates when durable background context is discovered
 - record important outputs back into project files
 - preserve uncertainty when evidence is incomplete

@@ -12,6 +12,25 @@ Use this prompt when a mission or phase is ending and must be closed cleanly. Th
 
 This prompt may draft or update only `PROJECT_STATE.md`, `AI_HANDOFF.md`, `00_control/WORK_LOG.md`, and `09_archive/`. It may read supporting files when provided. Do not update evidence indexes, query registries, notebook indexes, decision logs, tool notes, reports, outputs, or architecture decisions from this prompt.
 
+## Recommended Supporting Files
+
+When available, also read:
+
+- `TOOL_NOTES.md`
+- `02_evidence/EVIDENCE_INDEX.md`
+- `02_evidence/DEPRECATED_EVIDENCE.md`
+- `03_queries/QUERY_REGISTRY.md`
+- `04_notebooks/NOTEBOOK_INDEX.md`
+- `05_reports/REPORT_INDEX.md`
+- `06_outputs/OUTPUT_INDEX.md`
+- `00_control/DECISION_LOG.md`
+- `07_decisions/ARCHITECTURE_DECISIONS.md`
+- `09_archive/README.md`
+- `PROJECT_STATE.md`
+- `AI_HANDOFF.md`
+- `00_control/WORK_LOG.md`
+- relevant evidence, query, notebook, report, output, or decision records when closeout depends on them
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.

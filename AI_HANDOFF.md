@@ -61,6 +61,68 @@ When durable background context matters, also read the relevant files from:
 01_context/CONTEXT_INDEX.md
 ```
 
+When evidence-heavy work is being handed off, also read:
+
+```text
+02_evidence/README.md
+02_evidence/EVIDENCE_INDEX.md
+02_evidence/DEPRECATED_EVIDENCE.md
+```
+
+When query-heavy work is being handed off, also read:
+
+```text
+03_queries/README.md
+03_queries/QUERY_REGISTRY.md
+```
+
+When notebook-heavy work is being handed off, also read:
+
+```text
+04_notebooks/README.md
+04_notebooks/NOTEBOOK_INDEX.md
+```
+
+When report-heavy work is being handed off, also read:
+
+```text
+05_reports/README.md
+05_reports/REPORT_INDEX.md
+```
+
+When output-heavy work is being handed off, also read:
+
+```text
+06_outputs/README.md
+06_outputs/OUTPUT_INDEX.md
+```
+
+When decision-heavy work is being handed off, also read:
+
+```text
+00_control/DECISION_LOG.md
+07_decisions/README.md
+07_decisions/ARCHITECTURE_DECISIONS.md
+```
+
+When workbench-heavy or experiment-staging work is being handed off, also read:
+
+```text
+08_workbench/README.md
+```
+
+When archive-heavy or closeout-history work is being handed off, also read:
+
+```text
+09_archive/README.md
+```
+
+When automation-heavy or helper-script work is being handed off, also read:
+
+```text
+10_automation/README.md
+```
+
 Then continue from the `Current Active Handoff`.
 
 If the handoff conflicts with `PROJECT_STATE.md`, treat `PROJECT_STATE.md` as the higher authority and flag the conflict.
@@ -80,6 +142,24 @@ At the end of a session, update this file with:
 If durable background context was discovered during the session, do not silently treat it as project truth.
 
 Instead, propose a follow-up update to the correct `01_context/` file.
+
+If evidence handling, evidence hygiene, or evidence trust status changed during the session, make sure the next session is pointed to the relevant `02_evidence/` files.
+
+If query handling, query validation, or query trust status changed during the session, make sure the next session is pointed to the relevant `03_queries/` files.
+
+If notebook handling, notebook reproducibility, notebook status, Quarto workflow, or notebook output relationships changed during the session, make sure the next session is pointed to the relevant `04_notebooks/` files and any related `06_outputs/` records.
+
+If report drafting, report review, report status, audience targeting, publication state, or report output relationships changed during the session, make sure the next session is pointed to the relevant `05_reports/` files and any related `06_outputs/` records.
+
+If output generation, output review, output status, output supersession, or output reuse risk changed during the session, make sure the next session is pointed to the relevant `06_outputs/` files.
+
+If tactical or strategic decision status, decision routing, architecture rules, or long-term design choices changed during the session, make sure the next session is pointed to the relevant `00_control/DECISION_LOG.md` and `07_decisions/` files.
+
+If scratch material, experiment staging, temporary comparisons, or workbench promotion decisions changed during the session, make sure the next session is pointed to the relevant `08_workbench/` files and any promoted durable destinations.
+
+If archive status, closure bundles, retired material, or restore decisions changed during the session, make sure the next session is pointed to the relevant `09_archive/` files and any related active registries or ledgers.
+
+If automation scope, helper scripts, execution wrappers, Docker assets, or automation output routing changed during the session, make sure the next session is pointed to the relevant `10_automation/` files and any related durable destinations.
 
 Refresh `Current Active Handoff`.
 
