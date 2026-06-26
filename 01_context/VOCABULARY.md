@@ -80,43 +80,50 @@ Do not store:
 ## Vocabulary Summary
 
 ```text
-[Describe the general language domain this project needs to interpret correctly.]
+Shared observability and checkout language for interpreting latency, payment outcomes, and severity labels in a fictional e-commerce service.
 ```
 
 ## Core Terms
 
 | Term | Meaning | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Term]` | `[Meaning]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` | `[Notes]` |
+| `checkout` | `Customer flow from cart review to payment authorization.` | `Human-supplied dry run scenario` | `active` | `Domain term for the monitored business flow.` |
+| `failed payment` | `Checkout outcome where payment authorization fails.` | `Human-supplied dry run scenario` | `active` | `Must not be treated as cart abandonment.` |
+| `abandoned_cart` | `Customer left before payment authorization.` | `Human-supplied dry run scenario` | `active` | `Distinct from failed payment.` |
 
 ## Acronyms and Abbreviations
 
 | Acronym | Expansion | Meaning in Project Context | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Acronym]` | `[Expansion]` | `[Meaning]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `MTTA` | `Mean time to acknowledge` | `Time to acknowledge an incident or operational issue.` | `Human-supplied dry run scenario` | `active` |
+| `MTTR` | `Mean time to restore` | `Time to restore service after a problem.` | `Human-supplied dry run scenario` | `active` |
+| `P1` | `Priority 1` | `Customer-facing outage.` | `Human-supplied dry run scenario` | `active` |
+| `P2` | `Priority 2` | `Degraded service with workaround.` | `Human-supplied dry run scenario` | `active` |
 
 ## Field and Label Meanings
 
 | Field / Label | Meaning | System / Area | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Field or label]` | `[Meaning]` | `[System or area]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `payment_authorization_ms` | `Measured payment authorization duration in milliseconds.` | `Checkout / observability` | `Human-supplied dry run scenario` | `active` |
+| `checkout_status` | `Lifecycle status of a checkout attempt.` | `Checkout / observability` | `Human-supplied dry run scenario` | `active` |
 
 ## Naming Conventions
 
 | Convention | Meaning / Rule | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Convention]` | `[Meaning or rule]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` | `[Notes]` |
+| `Authorization latency threshold` | `Values above 2000 ms should be interpreted as degraded payment authorization latency.` | `Human-supplied dry run scenario` | `active` | `Operational interpretation rule.` |
 
 ## Ambiguous or Risky Terms
 
 | Term | Risk | Correct Interpretation Rule | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Term]` | `[Why it is risky or ambiguous]` | `[Correct interpretation]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `failed payment` | `Can be confused with checkout abandonment.` | `Treat failed payment as a distinct payment outcome, not as customer abandonment.` | `Human-supplied dry run scenario` | `active` |
+| `checkout_status` | `Exact status values are not yet supplied.` | `Use the term generically until concrete values are supplied by evidence or human clarification.` | `Human-supplied dry run scenario` | `draft` |
 
 ## Out-of-Scope Vocabulary
 
 ```text
-[Terms or label areas intentionally not normalized by this project.]
+Internal provider-specific payment codes and unsupplied checkout status enumerations are not normalized by this dry run.
 ```
 
 ## Context Update Trigger
@@ -193,6 +200,6 @@ Do not treat vocabulary notes as verified evidence unless they cite registered e
 
 ## Last Updated
 
-Local time: `[YYYY-MM-DD HH:MM timezone]`
+Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
 
-Updated by: `[Human/ChatGPT/Codex/etc.]`
+Updated by: `Codex`

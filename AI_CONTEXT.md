@@ -189,51 +189,66 @@ Automation and agent support -> `10_automation/`
 
 ## Project Summary
 
-`[Write a short summary of the project.]`
+`Dummy Checkout Observability Watch is a fictional e-commerce observability project initialized to investigate checkout latency and failed-payment signals without relying on chat memory.`
 
 ## Domain
 
-`[Observability / Elastic Stack / Network Observability / Application Logs / Infrastructure / Security / Other]`
+`Observability / Elastic Stack`
 
 ## Current Mission Snapshot
 
-`[Summarize the current mission. Keep aligned with CURRENT_MISSION.md.]`
+`Initialize the dummy checkout observability watch, capture durable context into 01_context, and prepare routing-aware project memory before any evidence, queries, dashboards, notebooks, reports, or outputs exist.`
 
 ## Key Systems
 
 | System | Purpose | Notes |
 |---|---|---|
-| `[System name]` | `[Purpose]` | `[Notes]` |
+| `Frontend` | `Customer-facing cart review and checkout entry point` | `Upstream of the checkout API in the supplied topology.` |
+| `Checkout API` | `Coordinates checkout attempts and payment authorization flow` | `Connects frontend, payment adapter, and message queue flows.` |
+| `Payment Gateway Adapter` | `Bridges checkout requests to the external payment provider` | `Critical path for payment authorization latency.` |
+| `External Payment Provider` | `Processes payment authorization externally` | `Outside direct system control; connected through the adapter.` |
+| `Message Queue` | `Carries checkout events toward fulfillment processing` | `Downstream from the checkout API.` |
+| `Fulfillment Service` | `Receives queued checkout-related work` | `Included in the supplied topology only.` |
+| `Elasticsearch` | `Expected storage and query layer for logs and metrics` | `Human-supplied expected observability destination.` |
+| `Kibana` | `Expected dashboard and observability surface` | `Human-supplied expected dashboard layer.` |
 
 ## Key Data Sources
 
 | Source | Type | Location / Reference | Notes |
 |---|---|---|---|
-| `[Source]` | `[Logs/Metrics/Traces/Exports/Screenshots/etc.]` | `[Path/reference]` | `[Notes]` |
+| `Checkout service logs` | `Logs` | `Expected in Elasticsearch` | `Human-supplied expectation only; not yet verified by evidence.` |
+| `Checkout dashboards` | `Dashboards` | `Expected in Kibana` | `Human-supplied expectation only; no dashboard assets supplied yet.` |
+| `Future latency distribution analysis` | `Notebook` | `Potential later notebook work` | `Notebook analysis may be used later; no notebook exists yet.` |
 
 ## Important Vocabulary
 
 | Term | Meaning | Notes |
 |---|---|---|
-| `[Term]` | `[Definition]` | `[Notes]` |
+| `MTTA` | `Mean time to acknowledge` | `Human-supplied vocabulary.` |
+| `MTTR` | `Mean time to restore` | `Human-supplied vocabulary.` |
+| `payment_authorization_ms` | `Measured payment authorization duration in milliseconds` | `Human-supplied field meaning.` |
+| `checkout_status` | `Lifecycle status of a checkout attempt` | `Human-supplied field meaning.` |
+| `abandoned_cart` | `Customer left before payment authorization` | `Distinct from failed payment.` |
 
 ## Active Constraints
 
-- `[Constraint 1]`
-- `[Constraint 2]`
-- `[Constraint 3]`
+- No real company data, secrets, or restricted data may be used in this dry run.
+- No evidence, queries, dashboards, notebooks, reports, or outputs may be invented during initialization.
+- Only human-supplied durable context may be written into selected `01_context/` files.
 
 ## Known Good References
 
 | Reference | Type | Location | Notes |
 |---|---|---|---|
-| `[Reference name]` | `[Query/Evidence/Notebook/Report/etc.]` | `[Path]` | `[Notes]` |
+| `Mission initialization prompt` | `Prompt` | `prompts/mission-init.prompt.md` | `Defines allowed initialization edits for this dry run.` |
+| `Context catalog` | `Context` | `01_context/CONTEXT_INDEX.md` | `Tracks the initialized durable context files.` |
+| `Mission order` | `Control` | `CURRENT_MISSION.md` | `Active dummy mission definition.` |
 
 ## Known Bad or Deprecated References
 
 | Reference | Type | Location | Reason |
 |---|---|---|---|
-| `[Reference name]` | `[Query/Evidence/Notebook/Report/etc.]` | `[Path]` | `[Why not trusted]` |
+| `None recorded` | `None` | `None` | `No deprecated references have been recorded during initialization.` |
 
 ## AI Behavior Rules
 
@@ -307,6 +322,6 @@ AI tools must not silently update this file.
 
 ## Last Updated
 
-Local time: `[YYYY-MM-DD HH:MM timezone]`
+Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
 
-Updated by: `[Human/ChatGPT/Codex/etc.]`
+Updated by: `Codex`

@@ -80,43 +80,50 @@ Do not store:
 ## Domain Summary
 
 ```text
-[Describe the domain, business process, operational area, or environment.]
+Fictional e-commerce checkout observability focused on latency and failed-payment interpretation.
 ```
 
 ## Business / Operational Context
 
 ```text
-[Describe how the process works at a high level.]
+Customers move from cart review into checkout, the system attempts payment authorization, and the mission distinguishes degraded authorization behavior from cart abandonment.
 ```
 
 ## Known Process Stages
 
 | Stage | Description | Source / Reference | Status |
 |---|---|---|---|
-| `[Stage]` | `[Description]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `Cart review` | `Customer reviews cart contents before initiating checkout.` | `Human-supplied dry run scenario` | `active` |
+| `Checkout initiation` | `Customer begins the checkout attempt.` | `Human-supplied dry run scenario` | `active` |
+| `Payment authorization` | `System requests payment authorization through the payment adapter and provider path.` | `Human-supplied dry run scenario` | `active` |
+| `Post-authorization routing` | `Checkout events may continue toward fulfillment processing through the message queue path.` | `Human-supplied dry run scenario` | `active` |
 
 ## Known Business Rules
 
 | Rule ID | Rule | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| BR-0001 | `[Business rule]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` | `[Notes]` |
+| BR-0001 | `A failed payment is not the same as an abandoned cart.` | `Human-supplied dry run scenario` | `active` | `Interpretation rule for checkout outcome analysis.` |
+| BR-0002 | `Payment authorization latency above 2 seconds is considered degraded.` | `Human-supplied dry run scenario` | `active` | `Operational degradation threshold supplied by the human.` |
+| BR-0003 | `P1 means customer-facing outage.` | `Human-supplied dry run scenario` | `active` | `Severity definition.` |
+| BR-0004 | `P2 means degraded service with workaround.` | `Human-supplied dry run scenario` | `active` | `Severity definition.` |
 
 ## Domain Assumptions
 
 | ID | Assumption | Source / Reference | Status | Validation Needed |
 |---|---|---|---|---|
-| A-0001 | `[Assumption]` | `[Human-declared / evidence ID / Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` | `[Yes/No/Unknown]` |
+| A-0001 | `Fulfillment processing is downstream from successful or otherwise handled checkout events, but the exact business transition conditions are not yet described.` | `Human-supplied topology context` | `draft` | `Yes` |
 
 ## Known Constraints
 
 | Constraint | Impact | Source / Reference | Status |
 |---|---|---|---|
-| `[Constraint]` | `[Impact]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `Only dummy scenario facts may be used during initialization.` | `Prevents contamination with real company or inferred data.` | `Dry run instructions` | `active` |
+| `No evidence artifacts exist yet.` | `Prevents validation of operational claims beyond supplied human facts.` | `Dry run instructions` | `active` |
 
 ## Out-of-Scope Domain Notes
 
 ```text
-[Domain areas that are intentionally not covered by this project.]
+Real company checkout implementations, real payment providers, customer data, and non-checkout business domains are intentionally out of scope.
 ```
 
 ## Context Update Trigger
@@ -193,6 +200,6 @@ Do not treat domain notes as verified evidence unless they cite registered evide
 
 ## Last Updated
 
-Local time: `[YYYY-MM-DD HH:MM timezone]`
+Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
 
-Updated by: `[Human/ChatGPT/Codex/etc.]`
+Updated by: `Codex`

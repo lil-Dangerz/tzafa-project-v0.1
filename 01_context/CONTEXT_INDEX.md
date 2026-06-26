@@ -65,10 +65,10 @@ unknown
 
 | ID | Status | Type | Context File | Purpose | Source / Reference | Owner | Last Reviewed | Notes |
 |---|---|---|---|---|---|---|---|---|
-| C-0001 | `draft` | `domain` | `01_context/DOMAIN_NOTES.md` | `Domain background and operating assumptions.` | `Template scaffold approved locally.` | `[Unknown]` | `[YYYY-MM-DD]` | `Template file created; project-instance content not yet populated.` |
-| C-0002 | `draft` | `vocabulary` | `01_context/VOCABULARY.md` | `Terms, acronyms, field meanings, and naming conventions.` | `Template scaffold approved locally.` | `[Unknown]` | `[YYYY-MM-DD]` | `Template file created; project-instance content not yet populated.` |
-| C-0003 | `draft` | `system_overview` | `01_context/SYSTEM_OVERVIEW.md` | `High-level system, service, or process overview.` | `Template scaffold approved locally.` | `[Unknown]` | `[YYYY-MM-DD]` | `Template file created; project-instance content not yet populated.` |
-| C-0004 | `draft` | `topology` | `01_context/TOPOLOGY.md` | `Topology, dependency, and flow diagrams.` | `Template scaffold approved locally.` | `[Unknown]` | `[YYYY-MM-DD]` | `Template file created; project-instance content not yet populated.` |
+| C-0001 | `active` | `domain` | `01_context/DOMAIN_NOTES.md` | `Domain background and operating assumptions for the dummy checkout observability watch.` | `Human-supplied dry run scenario.` | `Human + Codex dry run` | `2026-06-26` | `Initialized from supplied checkout, payment, and severity context.` |
+| C-0002 | `active` | `vocabulary` | `01_context/VOCABULARY.md` | `Terms, acronyms, field meanings, and naming conventions for the dummy mission.` | `Human-supplied dry run scenario.` | `Human + Codex dry run` | `2026-06-26` | `Initialized from supplied MTTA, MTTR, checkout, and payment terminology.` |
+| C-0003 | `active` | `system_overview` | `01_context/SYSTEM_OVERVIEW.md` | `High-level system and observability overview for the fictional checkout service.` | `Human-supplied dry run scenario.` | `Human + Codex dry run` | `2026-06-26` | `Initialized from supplied service components and observability layer notes.` |
+| C-0004 | `active` | `topology` | `01_context/TOPOLOGY.md` | `Topology, dependency, and flow diagrams for the fictional checkout service.` | `Human-supplied dry run scenario.` | `Human + Codex dry run` | `2026-06-26` | `Initialized from supplied component and observability flow topology.` |
 
 ## Update Rules
 
@@ -112,6 +112,6 @@ When context conflicts with `PROJECT_STATE.md`, treat `PROJECT_STATE.md` as high
 
 ## Last Updated
 
-Local time: `[YYYY-MM-DD HH:MM timezone]`
+Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
 
-Updated by: `[Human/ChatGPT/Codex/etc.]`
+Updated by: `Codex`

@@ -81,32 +81,43 @@ Do not store:
 ## Topology Summary
 
 ```text
-[Describe the major connection model or flow structure at a high level.]
+The fictional checkout service has a customer-facing checkout path, a downstream fulfillment path, and an observability path through Elasticsearch and Kibana.
 ```
 
 ## Major Connections
 
 | Source | Destination | Relationship / Flow | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Source]` | `[Destination]` | `[Relationship or flow]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `Frontend` | `Checkout API` | `Customer checkout requests flow into application handling.` | `Human-supplied dry run scenario` | `active` |
+| `Checkout API` | `Payment Gateway Adapter` | `Checkout requests move into payment authorization handling.` | `Human-supplied dry run scenario` | `active` |
+| `Payment Gateway Adapter` | `External Payment Provider` | `Authorization requests leave the controlled environment.` | `Human-supplied dry run scenario` | `active` |
+| `Checkout API` | `Message Queue` | `Application emits downstream checkout-related events.` | `Human-supplied dry run scenario` | `active` |
+| `Message Queue` | `Fulfillment Service` | `Queued events continue into fulfillment processing.` | `Human-supplied dry run scenario` | `active` |
+| `Logs/Metrics` | `Elasticsearch` | `Observability signals are expected to land in the search and storage layer.` | `Human-supplied dry run scenario` | `active` |
+| `Elasticsearch` | `Kibana Dashboards` | `Dashboards are expected to read from the observability store.` | `Human-supplied dry run scenario` | `active` |
 
 ## Dependency Paths
 
 | Dependency Path | Description | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Path]` | `[Description]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` | `[Notes]` |
+| `Frontend -> Checkout API -> Payment Gateway Adapter -> External Payment Provider` | `Primary payment authorization dependency path.` | `Human-supplied dry run scenario` | `active` | `Critical path for checkout latency interpretation.` |
+| `Checkout API -> Message Queue -> Fulfillment Service` | `Downstream event propagation path.` | `Human-supplied dry run scenario` | `active` | `Not the primary latency focus of this initialization.` |
+| `Logs/Metrics -> Elasticsearch -> Kibana Dashboards` | `Observability dependency path.` | `Human-supplied dry run scenario` | `active` | `Used later for investigation and visualization.` |
 
 ## Data or Event Flows
 
 | Flow | Description | Trigger / Direction | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Flow]` | `[Description]` | `[Trigger or direction]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `Payment authorization flow` | `Checkout moves toward external authorization through the application path.` | `Synchronous request path` | `Human-supplied dry run scenario` | `active` |
+| `Fulfillment event flow` | `Checkout API emits events toward fulfillment processing.` | `Downstream event path` | `Human-supplied dry run scenario` | `active` |
+| `Observability flow` | `Logs and metrics are expected to support later dashboards and analysis.` | `Operational signal path` | `Human-supplied dry run scenario` | `active` |
 
 ## Environment or Boundary Notes
 
 | Boundary | Meaning | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Boundary]` | `[Meaning]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` | `[Notes]` |
+| `Internal to external payment edge` | `Boundary between controlled application components and the external provider.` | `Human-supplied dry run scenario` | `active` | `Potential source of degraded latency or failures.` |
+| `Application to observability edge` | `Boundary between service execution and the observability stack.` | `Human-supplied dry run scenario` | `active` | `Observability is expected to observe, not execute, checkout behavior.` |
 
 ## Diagram Space
 
@@ -116,9 +127,13 @@ Example:
 
 ```mermaid
 flowchart LR
-    A[Source System] --> B[Processing Layer]
-    B --> C[Storage]
-    C --> D[Dashboard]
+    A[Frontend] --> B[Checkout API]
+    B --> C[Payment Gateway Adapter]
+    C --> D[External Payment Provider]
+    B --> E[Message Queue]
+    E --> F[Fulfillment Service]
+    G[Logs / Metrics] --> H[Elasticsearch]
+    H --> I[Kibana Dashboards]
 ```
 
 Use diagrams for:
@@ -135,7 +150,7 @@ handoff points
 ## Out-of-Scope Topology Notes
 
 ```text
-[Topology details intentionally not described or normalized by this project.]
+Low-level network paths, deployment zones, and vendor-internal payment topology are intentionally not described by this dry run.
 ```
 
 ## Context Update Trigger
@@ -213,6 +228,6 @@ Do not treat topology notes as verified evidence unless they cite registered evi
 
 ## Last Updated
 
-Local time: `[YYYY-MM-DD HH:MM timezone]`
+Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
 
-Updated by: `[Human/ChatGPT/Codex/etc.]`
+Updated by: `Codex`

@@ -81,37 +81,50 @@ Do not store:
 ## System Summary
 
 ```text
-[Describe the system or platform at a high level.]
+Fictional e-commerce checkout service with an application path for payment authorization and an observability path through Elasticsearch and Kibana.
 ```
 
 ## Major Components
 
 | Component | Role / Responsibility | Upstream / Downstream | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Component]` | `[Role]` | `[Related systems]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `Frontend` | `Customer-facing entry point for cart review and checkout.` | `Checkout API` | `Human-supplied dry run scenario` | `active` |
+| `Checkout API` | `Coordinates checkout attempts and application-side checkout processing.` | `Frontend, Payment Gateway Adapter, Message Queue` | `Human-supplied dry run scenario` | `active` |
+| `Payment Gateway Adapter` | `Relays payment authorization traffic to the external provider.` | `Checkout API, External Payment Provider` | `Human-supplied dry run scenario` | `active` |
+| `External Payment Provider` | `Processes payment authorization externally.` | `Payment Gateway Adapter` | `Human-supplied dry run scenario` | `active` |
+| `Message Queue` | `Carries downstream checkout-related events.` | `Checkout API, Fulfillment Service` | `Human-supplied dry run scenario` | `active` |
+| `Fulfillment Service` | `Consumes downstream queued work.` | `Message Queue` | `Human-supplied dry run scenario` | `active` |
+| `Elasticsearch` | `Expected observability store for logs and metrics.` | `Kibana` | `Human-supplied dry run scenario` | `active` |
+| `Kibana` | `Expected dashboard and observability interface.` | `Elasticsearch` | `Human-supplied dry run scenario` | `active` |
 
 ## Major Data or Control Flows
 
 | Flow | Description | Source / Destination | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Flow]` | `[Description]` | `[Source -> Destination]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `Checkout authorization flow` | `Customer checkout requests move toward payment authorization through the application path.` | `Frontend -> Checkout API -> Payment Gateway Adapter -> External Payment Provider` | `Human-supplied dry run scenario` | `active` |
+| `Fulfillment event flow` | `Checkout API sends downstream events toward fulfillment processing.` | `Checkout API -> Message Queue -> Fulfillment Service` | `Human-supplied dry run scenario` | `active` |
+| `Observability flow` | `Operational signals are expected to move into the observability stack.` | `Logs/Metrics -> Elasticsearch -> Kibana Dashboards` | `Human-supplied dry run scenario` | `active` |
 
 ## External Systems and Integrations
 
 | System / Integration | Purpose | Relationship to Project | Source / Reference | Status |
 |---|---|---|---|---|
-| `[System]` | `[Purpose]` | `[Relationship]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` |
+| `External Payment Provider` | `External payment authorization` | `Downstream external dependency of the payment gateway adapter.` | `Human-supplied dry run scenario` | `active` |
+| `Elasticsearch` | `Observability storage and search` | `Expected destination for logs and metrics.` | `Human-supplied dry run scenario` | `active` |
+| `Kibana` | `Observability dashboards` | `Expected dashboard layer over Elasticsearch.` | `Human-supplied dry run scenario` | `active` |
 
 ## User-Facing and Internal Boundaries
 
 | Boundary | Meaning | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Boundary]` | `[Meaning]` | `[Path, evidence ID, or Unknown]` | `[draft/active/stale/deprecated/superseded/unknown]` | `[Notes]` |
+| `Customer-facing boundary` | `Frontend and checkout experience are customer-facing.` | `Human-supplied dry run scenario` | `active` | `Relevant to outage and degradation interpretation.` |
+| `External dependency boundary` | `External payment provider is outside direct service control.` | `Human-supplied dry run scenario` | `active` | `May affect latency and failure interpretation.` |
+| `Observability boundary` | `Elasticsearch and Kibana form the observability layer rather than the transaction-processing path.` | `Human-supplied dry run scenario` | `active` | `Used for later investigation, not yet evidenced.` |
 
 ## Out-of-Scope System Notes
 
 ```text
-[System areas intentionally not described or normalized by this project.]
+Implementation details of the payment provider, queue semantics, and deployment architecture are not described by this dry run.
 ```
 
 ## Context Update Trigger
@@ -189,6 +202,6 @@ Do not treat system overview notes as verified evidence unless they cite registe
 
 ## Last Updated
 
-Local time: `[YYYY-MM-DD HH:MM timezone]`
+Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
 
-Updated by: `[Human/ChatGPT/Codex/etc.]`
+Updated by: `Codex`
