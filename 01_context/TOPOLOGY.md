@@ -200,7 +200,13 @@ When topology context conflicts with `PROJECT_STATE.md`, treat `PROJECT_STATE.md
 
 If durable topology context is discovered during initialization, evidence review, query review, dashboard review, notebook review, handoff, closeout, or analysis, propose a `TOPOLOGY.md` update instead of silently editing this file.
 
-`prompts/mission-init.prompt.md` may detect topology needs and propose follow-up updates, but it must not directly edit this file under the current authority rules.
+`prompts/mission-init.prompt.md` may initialize or update this file during initialization only when durable context is supplied by explicit human statements, supplied project files, supplied architecture notes, supplied evidence summaries, or human-confirmed facts.
+
+`prompts/mission-init.prompt.md` must not write guessed domain facts, AI memory, generic examples as project facts, unverified assumptions as confirmed truth, raw evidence, or large pasted documentation.
+
+If source strength is weak, the item must be marked as an assumption, open question, or proposed context update.
+
+Other prompts may propose `TOPOLOGY.md` updates unless explicitly authorized.
 
 ## Cross-References
 

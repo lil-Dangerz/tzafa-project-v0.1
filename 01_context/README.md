@@ -89,6 +89,29 @@ Humans may update files in this folder directly.
 
 AI tools may update files in this folder only when explicitly instructed.
 
+`prompts/mission-init.prompt.md` may initialize or update selected `01_context/` files during initialization only when durable context is supplied by:
+
+- explicit human statements
+- supplied project files
+- supplied architecture notes
+- supplied evidence summaries
+- human-confirmed facts
+
+`prompts/mission-init.prompt.md` must not write:
+
+```text
+guessed domain facts
+AI memory
+generic examples as project facts
+unverified assumptions as confirmed truth
+raw evidence
+large pasted documentation
+```
+
+If source strength is weak, the item must be marked as an assumption, open question, or proposed context update.
+
+Other prompts may propose context updates unless explicitly authorized.
+
 If AI-generated context is based on assumptions rather than evidence, label it clearly as an assumption.
 
 Do not let AI tools promote assumptions to facts without human confirmation or evidence-backed support.
