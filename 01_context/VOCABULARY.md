@@ -47,9 +47,9 @@ This file explains what important project language means.
 
 Examples of vocabulary notes include:
 
-- what an exchange, cancellation, or fulfillment event means in warehouse data
+- what an exchange, cancellation, or dispatch event means in warehouse data
 - what a quality gate, hotspot, or coverage label means in software-quality work
-- what P1, P2, MTTA, or MTTR mean in incident-response work
+- what a severity label or restoration metric means in incident-response work
 - what a field name, status value, or metric label means in a dashboard or query
 - known naming conventions for systems, teams, regions, services, or environments
 - ambiguous words that must not be interpreted loosely
@@ -80,50 +80,49 @@ Do not store:
 ## Vocabulary Summary
 
 ```text
-Shared observability and checkout language for interpreting latency, payment outcomes, and severity labels in a fictional e-commerce service.
+[Vocabulary Summary]
 ```
 
 ## Core Terms
 
 | Term | Meaning | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `checkout` | `Customer flow from cart review to payment authorization.` | `Human-supplied dry run scenario` | `active` | `Domain term for the monitored business flow.` |
-| `failed payment` | `Checkout outcome where payment authorization fails.` | `Human-supplied dry run scenario` | `active` | `Must not be treated as cart abandonment.` |
-| `abandoned_cart` | `Customer left before payment authorization.` | `Human-supplied dry run scenario` | `active` | `Distinct from failed payment.` |
+| `[Term]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| `[Term]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| `[Term]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
 
 ## Acronyms and Abbreviations
 
 | Acronym | Expansion | Meaning in Project Context | Source / Reference | Status |
 |---|---|---|---|---|
-| `MTTA` | `Mean time to acknowledge` | `Time to acknowledge an incident or operational issue.` | `Human-supplied dry run scenario` | `active` |
-| `MTTR` | `Mean time to restore` | `Time to restore service after a problem.` | `Human-supplied dry run scenario` | `active` |
-| `P1` | `Priority 1` | `Customer-facing outage.` | `Human-supplied dry run scenario` | `active` |
-| `P2` | `Priority 2` | `Degraded service with workaround.` | `Human-supplied dry run scenario` | `active` |
+| `[Acronym]` | `[Expansion]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[Acronym]` | `[Expansion]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
 
 ## Field and Label Meanings
 
 | Field / Label | Meaning | System / Area | Source / Reference | Status |
 |---|---|---|---|---|
-| `payment_authorization_ms` | `Measured payment authorization duration in milliseconds.` | `Checkout / observability` | `Human-supplied dry run scenario` | `active` |
-| `checkout_status` | `Lifecycle status of a checkout attempt.` | `Checkout / observability` | `Human-supplied dry run scenario` | `active` |
+| `[Field / Label]` | `[Meaning]` | `[System / Area]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[Field / Label]` | `[Meaning]` | `[System / Area]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
 
 ## Naming Conventions
 
 | Convention | Meaning / Rule | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `Authorization latency threshold` | `Values above 2000 ms should be interpreted as degraded payment authorization latency.` | `Human-supplied dry run scenario` | `active` | `Operational interpretation rule.` |
+| `[Convention]` | `[Meaning / Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| `[Convention]` | `[Meaning / Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
 
 ## Ambiguous or Risky Terms
 
 | Term | Risk | Correct Interpretation Rule | Source / Reference | Status |
 |---|---|---|---|---|
-| `failed payment` | `Can be confused with checkout abandonment.` | `Treat failed payment as a distinct payment outcome, not as customer abandonment.` | `Human-supplied dry run scenario` | `active` |
-| `checkout_status` | `Exact status values are not yet supplied.` | `Use the term generically until concrete values are supplied by evidence or human clarification.` | `Human-supplied dry run scenario` | `draft` |
+| `[Term]` | `[Risk]` | `[Correct Interpretation Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[Term]` | `[Risk]` | `[Correct Interpretation Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
 
 ## Out-of-Scope Vocabulary
 
 ```text
-Internal provider-specific payment codes and unsupplied checkout status enumerations are not normalized by this dry run.
+[Out-of-scope vocabulary boundary]
 ```
 
 ## Context Update Trigger
@@ -180,6 +179,14 @@ If source strength is weak, the item must be marked as an assumption, open quest
 
 Other prompts may propose `VOCABULARY.md` updates unless explicitly authorized.
 
+## Behavioral QA Safety Rule
+
+Behavioral dry runs must not be performed directly on the reusable template branch.
+
+Use a disposable branch, copied test instance, temporary worktree, or isolated QA fixture.
+
+Dry-run content must not remain in reusable template files.
+
 ## Cross-References
 
 Relevant files:
@@ -206,6 +213,6 @@ Do not treat vocabulary notes as verified evidence unless they cite registered e
 
 ## Last Updated
 
-Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
+Local time: `2026-06-26 -06:00 America/Mexico_City`
 
 Updated by: `Codex`

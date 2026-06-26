@@ -81,50 +81,43 @@ Do not store:
 ## System Summary
 
 ```text
-Fictional e-commerce checkout service with an application path for payment authorization and an observability path through Elasticsearch and Kibana.
+[System Summary]
 ```
 
 ## Major Components
 
 | Component | Role / Responsibility | Upstream / Downstream | Source / Reference | Status |
 |---|---|---|---|---|
-| `Frontend` | `Customer-facing entry point for cart review and checkout.` | `Checkout API` | `Human-supplied dry run scenario` | `active` |
-| `Checkout API` | `Coordinates checkout attempts and application-side checkout processing.` | `Frontend, Payment Gateway Adapter, Message Queue` | `Human-supplied dry run scenario` | `active` |
-| `Payment Gateway Adapter` | `Relays payment authorization traffic to the external provider.` | `Checkout API, External Payment Provider` | `Human-supplied dry run scenario` | `active` |
-| `External Payment Provider` | `Processes payment authorization externally.` | `Payment Gateway Adapter` | `Human-supplied dry run scenario` | `active` |
-| `Message Queue` | `Carries downstream checkout-related events.` | `Checkout API, Fulfillment Service` | `Human-supplied dry run scenario` | `active` |
-| `Fulfillment Service` | `Consumes downstream queued work.` | `Message Queue` | `Human-supplied dry run scenario` | `active` |
-| `Elasticsearch` | `Expected observability store for logs and metrics.` | `Kibana` | `Human-supplied dry run scenario` | `active` |
-| `Kibana` | `Expected dashboard and observability interface.` | `Elasticsearch` | `Human-supplied dry run scenario` | `active` |
+| `[System Component]` | `[Role / Responsibility]` | `[Upstream / Downstream]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[System Component]` | `[Role / Responsibility]` | `[Upstream / Downstream]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[System Component]` | `[Role / Responsibility]` | `[Upstream / Downstream]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
 
 ## Major Data or Control Flows
 
 | Flow | Description | Source / Destination | Source / Reference | Status |
 |---|---|---|---|---|
-| `Checkout authorization flow` | `Customer checkout requests move toward payment authorization through the application path.` | `Frontend -> Checkout API -> Payment Gateway Adapter -> External Payment Provider` | `Human-supplied dry run scenario` | `active` |
-| `Fulfillment event flow` | `Checkout API sends downstream events toward fulfillment processing.` | `Checkout API -> Message Queue -> Fulfillment Service` | `Human-supplied dry run scenario` | `active` |
-| `Observability flow` | `Operational signals are expected to move into the observability stack.` | `Logs/Metrics -> Elasticsearch -> Kibana Dashboards` | `Human-supplied dry run scenario` | `active` |
+| `[Flow]` | `[Description]` | `[Source / Destination]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[Flow]` | `[Description]` | `[Source / Destination]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[Flow]` | `[Description]` | `[Source / Destination]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
 
 ## External Systems and Integrations
 
 | System / Integration | Purpose | Relationship to Project | Source / Reference | Status |
 |---|---|---|---|---|
-| `External Payment Provider` | `External payment authorization` | `Downstream external dependency of the payment gateway adapter.` | `Human-supplied dry run scenario` | `active` |
-| `Elasticsearch` | `Observability storage and search` | `Expected destination for logs and metrics.` | `Human-supplied dry run scenario` | `active` |
-| `Kibana` | `Observability dashboards` | `Expected dashboard layer over Elasticsearch.` | `Human-supplied dry run scenario` | `active` |
+| `[System / Integration]` | `[Purpose]` | `[Relationship to Project]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[System / Integration]` | `[Purpose]` | `[Relationship to Project]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
 
 ## User-Facing and Internal Boundaries
 
 | Boundary | Meaning | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `Customer-facing boundary` | `Frontend and checkout experience are customer-facing.` | `Human-supplied dry run scenario` | `active` | `Relevant to outage and degradation interpretation.` |
-| `External dependency boundary` | `External payment provider is outside direct service control.` | `Human-supplied dry run scenario` | `active` | `May affect latency and failure interpretation.` |
-| `Observability boundary` | `Elasticsearch and Kibana form the observability layer rather than the transaction-processing path.` | `Human-supplied dry run scenario` | `active` | `Used for later investigation, not yet evidenced.` |
+| `[Boundary]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| `[Boundary]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
 
 ## Out-of-Scope System Notes
 
 ```text
-Implementation details of the payment provider, queue semantics, and deployment architecture are not described by this dry run.
+[Out-of-scope system boundary]
 ```
 
 ## Context Update Trigger
@@ -182,6 +175,14 @@ If source strength is weak, the item must be marked as an assumption, open quest
 
 Other prompts may propose `SYSTEM_OVERVIEW.md` updates unless explicitly authorized.
 
+## Behavioral QA Safety Rule
+
+Behavioral dry runs must not be performed directly on the reusable template branch.
+
+Use a disposable branch, copied test instance, temporary worktree, or isolated QA fixture.
+
+Dry-run content must not remain in reusable template files.
+
 ## Cross-References
 
 Relevant files:
@@ -208,6 +209,6 @@ Do not treat system overview notes as verified evidence unless they cite registe
 
 ## Last Updated
 
-Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
+Local time: `2026-06-26 -06:00 America/Mexico_City`
 
 Updated by: `Codex`

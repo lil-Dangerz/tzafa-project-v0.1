@@ -65,10 +65,10 @@ unknown
 
 | ID | Status | Type | Context File | Purpose | Source / Reference | Owner | Last Reviewed | Notes |
 |---|---|---|---|---|---|---|---|---|
-| C-0001 | `active` | `domain` | `01_context/DOMAIN_NOTES.md` | `Domain background and operating assumptions for the dummy checkout observability watch.` | `Human-supplied dry run scenario.` | `Human + Codex dry run` | `2026-06-26` | `Initialized from supplied checkout, payment, and severity context.` |
-| C-0002 | `active` | `vocabulary` | `01_context/VOCABULARY.md` | `Terms, acronyms, field meanings, and naming conventions for the dummy mission.` | `Human-supplied dry run scenario.` | `Human + Codex dry run` | `2026-06-26` | `Initialized from supplied MTTA, MTTR, checkout, and payment terminology.` |
-| C-0003 | `active` | `system_overview` | `01_context/SYSTEM_OVERVIEW.md` | `High-level system and observability overview for the fictional checkout service.` | `Human-supplied dry run scenario.` | `Human + Codex dry run` | `2026-06-26` | `Initialized from supplied service components and observability layer notes.` |
-| C-0004 | `active` | `topology` | `01_context/TOPOLOGY.md` | `Topology, dependency, and flow diagrams for the fictional checkout service.` | `Human-supplied dry run scenario.` | `Human + Codex dry run` | `2026-06-26` | `Initialized from supplied component and observability flow topology.` |
+| C-0001 | `draft` | `domain` | `01_context/DOMAIN_NOTES.md` | `Durable domain background, operating assumptions, and business rules.` | `[Pending]` | `[Owner or Unknown]` | `[YYYY-MM-DD]` | `Reusable template entry awaiting project-specific context.` |
+| C-0002 | `draft` | `vocabulary` | `01_context/VOCABULARY.md` | `Durable terms, acronyms, labels, and interpretation rules.` | `[Pending]` | `[Owner or Unknown]` | `[YYYY-MM-DD]` | `Reusable template entry awaiting project-specific context.` |
+| C-0003 | `draft` | `system_overview` | `01_context/SYSTEM_OVERVIEW.md` | `High-level structural overview of major components and responsibilities.` | `[Pending]` | `[Owner or Unknown]` | `[YYYY-MM-DD]` | `Reusable template entry awaiting project-specific context.` |
+| C-0004 | `draft` | `topology` | `01_context/TOPOLOGY.md` | `High-level connections, dependency paths, and flow summaries.` | `[Pending]` | `[Owner or Unknown]` | `[YYYY-MM-DD]` | `Reusable template entry awaiting project-specific context.` |
 
 ## Update Rules
 
@@ -85,6 +85,14 @@ When context is replaced, change `Status` to `superseded` and reference the repl
 When context should no longer be used, change `Status` to `deprecated` and explain why in `Notes`.
 
 Do not mark context as `active` unless it is human-confirmed, evidence-backed, or file-backed.
+
+## Behavioral QA Safety Rule
+
+Behavioral dry runs must not be performed directly on the reusable template branch.
+
+Use a disposable branch, copied test instance, temporary worktree, or isolated QA fixture.
+
+Dry-run content must not remain in reusable template files.
 
 ## Cross-References
 
@@ -112,6 +120,6 @@ When context conflicts with `PROJECT_STATE.md`, treat `PROJECT_STATE.md` as high
 
 ## Last Updated
 
-Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
+Local time: `2026-06-26 -06:00 America/Mexico_City`
 
 Updated by: `Codex`

@@ -80,50 +80,49 @@ Do not store:
 ## Domain Summary
 
 ```text
-Fictional e-commerce checkout observability focused on latency and failed-payment interpretation.
+[Domain Summary]
 ```
 
 ## Business / Operational Context
 
 ```text
-Customers move from cart review into checkout, the system attempts payment authorization, and the mission distinguishes degraded authorization behavior from cart abandonment.
+[Business / operational context]
 ```
 
 ## Known Process Stages
 
 | Stage | Description | Source / Reference | Status |
 |---|---|---|---|
-| `Cart review` | `Customer reviews cart contents before initiating checkout.` | `Human-supplied dry run scenario` | `active` |
-| `Checkout initiation` | `Customer begins the checkout attempt.` | `Human-supplied dry run scenario` | `active` |
-| `Payment authorization` | `System requests payment authorization through the payment adapter and provider path.` | `Human-supplied dry run scenario` | `active` |
-| `Post-authorization routing` | `Checkout events may continue toward fulfillment processing through the message queue path.` | `Human-supplied dry run scenario` | `active` |
+| `[Stage]` | `[Description]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[Stage]` | `[Description]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[Stage]` | `[Description]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
 
 ## Known Business Rules
 
 | Rule ID | Rule | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| BR-0001 | `A failed payment is not the same as an abandoned cart.` | `Human-supplied dry run scenario` | `active` | `Interpretation rule for checkout outcome analysis.` |
-| BR-0002 | `Payment authorization latency above 2 seconds is considered degraded.` | `Human-supplied dry run scenario` | `active` | `Operational degradation threshold supplied by the human.` |
-| BR-0003 | `P1 means customer-facing outage.` | `Human-supplied dry run scenario` | `active` | `Severity definition.` |
-| BR-0004 | `P2 means degraded service with workaround.` | `Human-supplied dry run scenario` | `active` | `Severity definition.` |
+| BR-0001 | `[Business Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| BR-0002 | `[Business Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| BR-0003 | `[Business Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
 
 ## Domain Assumptions
 
 | ID | Assumption | Source / Reference | Status | Validation Needed |
 |---|---|---|---|---|
-| A-0001 | `Fulfillment processing is downstream from successful or otherwise handled checkout events, but the exact business transition conditions are not yet described.` | `Human-supplied topology context` | `draft` | `Yes` |
+| A-0001 | `[Assumption]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Yes/No/Unknown]` |
+| A-0002 | `[Assumption]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Yes/No/Unknown]` |
 
 ## Known Constraints
 
 | Constraint | Impact | Source / Reference | Status |
 |---|---|---|---|
-| `Only dummy scenario facts may be used during initialization.` | `Prevents contamination with real company or inferred data.` | `Dry run instructions` | `active` |
-| `No evidence artifacts exist yet.` | `Prevents validation of operational claims beyond supplied human facts.` | `Dry run instructions` | `active` |
+| `[Constraint]` | `[Impact]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `[Constraint]` | `[Impact]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
 
 ## Out-of-Scope Domain Notes
 
 ```text
-Real company checkout implementations, real payment providers, customer data, and non-checkout business domains are intentionally out of scope.
+[Out-of-scope domain boundary]
 ```
 
 ## Context Update Trigger
@@ -181,6 +180,14 @@ If source strength is weak, the item must be marked as an assumption, open quest
 
 Other prompts may propose `DOMAIN_NOTES.md` updates unless explicitly authorized.
 
+## Behavioral QA Safety Rule
+
+Behavioral dry runs must not be performed directly on the reusable template branch.
+
+Use a disposable branch, copied test instance, temporary worktree, or isolated QA fixture.
+
+Dry-run content must not remain in reusable template files.
+
 ## Cross-References
 
 Relevant files:
@@ -206,6 +213,6 @@ Do not treat domain notes as verified evidence unless they cite registered evide
 
 ## Last Updated
 
-Local time: `2026-06-26 00:33 -06:00 America/Mexico_City`
+Local time: `2026-06-26 -06:00 America/Mexico_City`
 
 Updated by: `Codex`
