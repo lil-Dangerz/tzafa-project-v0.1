@@ -60,12 +60,19 @@ Before continuing work, check:
 
 - whether `AI_HANDOFF.md` contains a current active handoff
 - whether the handoff status is open, in progress, blocked, complete, stale, or superseded
+- whether the handoff includes `Artifact Routing Status`
 - whether the relay task is clear
 - whether the receiving role/tool is correct
 - whether required files are listed and supplied
 - whether the handoff aligns with `CURRENT_MISSION.md`
 - whether the handoff conflicts with `PROJECT_STATE.md`
 - whether the handoff conflicts with `AI_CONTEXT.md`
+- whether the routing state is consistent with `AI_CONTEXT.md` and `README.md`
+- whether artifacts are mentioned without paths
+- whether artifacts are mentioned without registry or index state
+- whether pending registrations exist
+- whether routing conflicts exist
+- whether work should be blocked until routing is clarified
 - whether durable background context files are needed for this relay
 - whether `TOOL_NOTES.md` contains warnings relevant to the relay
 - whether deprecated evidence or deprecated queries are referenced
@@ -83,6 +90,8 @@ Use one of:
 - `stale`
 - `rejected`
 - `unknown`
+
+A handoff with missing artifact paths or missing routing state should be at least `accepted_with_warnings`, or `blocked` if the routing gaps could cause evidence, query, notebook, report, output, or decision loss.
 
 
 ## Required Response Format

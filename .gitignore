@@ -167,3 +167,6 @@ docker-compose.override.yml
 # These are NOT globally ignored:
 # *.json
 # *.ndjson
+
+AI_HANDOFF_TO_LOCAL_AGENT*
+CODEX_QA*

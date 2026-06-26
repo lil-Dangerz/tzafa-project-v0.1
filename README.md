@@ -130,17 +130,29 @@ The preferred way to populate them is to use:
 prompts/mission-init.prompt.md
 ```
 
-`mission-init.prompt.md` may detect durable context needs during initialization, but it must not directly edit `01_context/`.
+During initialization, `mission-init.prompt.md` may also initialize selected `01_context/` files when durable context is supplied by the human, supplied project files, supplied architecture notes, supplied evidence summaries, or human-confirmed facts.
 
-If durable domain, vocabulary, system, topology, or external-reference context is discovered, route it into:
+Allowed initialization context files:
+
+```text
+01_context/CONTEXT_INDEX.md
+01_context/DOMAIN_NOTES.md
+01_context/VOCABULARY.md
+01_context/SYSTEM_OVERVIEW.md
+01_context/TOPOLOGY.md
+```
+
+If the source is weak or incomplete, route it into:
 
 ```text
 Proposed Follow-Up File Updates
 ```
 
-for later human-approved updates to `01_context/`.
+as an assumption, open question, or proposed context update rather than verified context.
 
 After that, register evidence, queries, notebooks, reports, outputs, and decisions as they are created.
+
+Use the `Artifact Routing Brief` in `AI_CONTEXT.md` after initialization so agents know the default storage and registration destinations without requiring the human to restate every artifact path.
 
 ## How to Use With ChatGPT
 
@@ -353,7 +365,9 @@ If the task is primarily about automation helpers, script organization, Docker o
 10_automation/README.md
 ```
 
-When Codex discovers durable domain, vocabulary, system, or topology context, it should propose an update to the correct `01_context/` file instead of silently editing context files.
+When Codex discovers durable domain, vocabulary, system, or topology context, it should obey the active prompt authority and checkpoint rules.
+
+Initialization may update selected `01_context/` files through `mission-init.prompt.md` when the source is strong enough. Outside initialization, agents should propose the correct `01_context/` update instead of silently editing context files.
 
 Codex may edit controlled files only when explicitly instructed.
 

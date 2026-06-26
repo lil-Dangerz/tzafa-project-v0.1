@@ -165,6 +165,8 @@ Refresh `Current Active Handoff`.
 
 Append one short row to `Handoff History`.
 
+Every handoff must carry artifact-routing awareness forward so the next agent does not need the human to restate destinations.
+
 ## Current Active Handoff
 
 ### Handoff Status
@@ -210,6 +212,46 @@ Append one short row to `Handoff History`.
 
 - `[Path 1]`
 - `[Path 2]`
+
+### Artifact Routing Status
+
+Artifact Routing Rules Active: `[Yes/No/Unknown]`
+
+Routing Source: `[AI_CONTEXT.md / README.md / Unknown]`
+
+Evidence routing: `[State]`
+
+Query routing: `[State]`
+
+Notebook routing: `[State]`
+
+Report routing: `[State]`
+
+Output routing: `[State]`
+
+Decision routing: `[State]`
+
+Context routing: `[State]`
+
+Tool-notes routing: `[State]`
+
+Workbench routing: `[State]`
+
+Archive routing: `[State]`
+
+Automation routing: `[State]`
+
+Artifacts created this session:
+
+- `[Path or None]`
+
+Artifacts needing registration:
+
+- `[Path and target registry or None]`
+
+Routing concerns:
+
+- `[Concern or None]`
 
 ### Open Issues / Blockers
 

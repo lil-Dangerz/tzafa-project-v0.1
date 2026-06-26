@@ -60,6 +60,7 @@ The handoff must contain:
 
 - one current active handoff
 - one short handoff history entry
+- one `Artifact Routing Status` block
 
 Refresh the `Current Active Handoff` section.
 
@@ -69,7 +70,37 @@ Do not store raw evidence here. Do not store query libraries here. Do not store 
 
 ## Required Handoff Checks
 
-Before drafting the handoff, identify what was done, what changed, files created/modified/referenced, current blockers, warnings or mistakes to avoid, files the next session must read first, exact next task, whether the next session should run `handon.prompt.md`, whether the mission is continuing or closeout is needed, whether durable background context follow-up should be proposed for `01_context/`, and whether `TOOL_NOTES.md` should receive a proposed update.
+Before drafting the handoff, identify:
+
+- what was done
+- what changed
+- files created, modified, or referenced
+- current blockers
+- warnings or mistakes to avoid
+- files the next session must read first
+- exact next task
+- whether the next session should run `handon.prompt.md`
+- whether the mission is continuing or closeout is needed
+- whether durable background context follow-up should be proposed for `01_context/`
+- whether `TOOL_NOTES.md` should receive a proposed update
+- whether any evidence files were created or referenced
+- whether any queries were created, tested, validated, deprecated, or superseded
+- whether any notebooks were created or modified
+- whether any reports or outputs were produced
+- whether any decisions, risks, questions, or work-log entries were created
+- whether all artifact paths and target registries are identified
+- whether pending registrations remain
+- whether routing concerns remain
+
+It must carry forward:
+
+- artifact paths
+- registration state
+- pending registrations
+- routing concerns
+- next files to read
+
+It must not silently update registries unless the active prompt authority allows it.
 
 
 ## Required Response Format

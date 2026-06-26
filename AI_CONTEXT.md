@@ -137,6 +137,56 @@ When durable background context matters, also read the relevant files from:
 01_context/CONTEXT_INDEX.md
 ```
 
+## Artifact Routing Brief
+
+Agents should use this routing brief after initialization without requiring the human to repeat destinations for every artifact.
+
+Routing knowledge does not grant unlimited edit authority. Agents must still obey the active prompt's file authority and checkpoint rules.
+
+Evidence files, logs, screenshots, exports, samples -> `02_evidence/`
+
+Evidence registry -> `02_evidence/EVIDENCE_INDEX.md`
+
+Deprecated, replaced, or untrusted evidence -> `02_evidence/DEPRECATED_EVIDENCE.md`
+
+Queries, query drafts, validated queries, broken queries -> `03_queries/`
+
+Query registry -> `03_queries/QUERY_REGISTRY.md`
+
+Jupyter notebooks, Quarto notebooks, analysis notebooks -> `04_notebooks/`
+
+Notebook index -> `04_notebooks/NOTEBOOK_INDEX.md`
+
+Narrative reports, investigation reports, final summaries -> `05_reports/`
+
+Report index -> `05_reports/REPORT_INDEX.md`
+
+Generated charts, CSVs, extracts, rendered artifacts, derived files -> `06_outputs/`
+
+Output index -> `06_outputs/OUTPUT_INDEX.md`
+
+Tactical or project decisions -> `00_control/DECISION_LOG.md`
+
+Strategic or architecture decisions -> `07_decisions/ARCHITECTURE_DECISIONS.md`
+
+Work trail -> `00_control/WORK_LOG.md`
+
+Open questions -> `00_control/OPEN_QUESTIONS.md`
+
+Risks -> `00_control/RISK_REGISTER.md`
+
+Durable domain, system, vocabulary, or topology context -> `01_context/`
+
+Context catalog -> `01_context/CONTEXT_INDEX.md`
+
+Tool behavior, tool quirks, repeated AI mistakes -> `TOOL_NOTES.md`
+
+Temporary scratch work -> `08_workbench/`
+
+Archived or superseded material -> `09_archive/`
+
+Automation and agent support -> `10_automation/`
+
 ## Project Summary
 
 `[Write a short summary of the project.]`
@@ -212,7 +262,10 @@ AI tools must:
 - avoid treating workbench material as durable truth unless explicitly promoted
 - avoid treating archived material as active unless explicitly restored or revalidated
 - avoid letting automation outputs bypass the normal registries and ledgers
-- propose follow-up `01_context/` updates when durable background context is discovered
+- use the `Artifact Routing Brief` after initialization when deciding where artifacts belong
+- obey active prompt authority before updating any routing destination or registry
+- during initialization, allow selected `01_context/` updates only when supported by strong supplied sources
+- classify weak context as an assumption, open question, or proposed context update instead of verified context
 - record important outputs back into project files
 - preserve uncertainty when evidence is incomplete
 

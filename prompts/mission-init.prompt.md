@@ -16,6 +16,8 @@ PROJECT_STATE.md
 AI_CONTEXT.md
 ```
 
+It may also initialize selected durable context files when strong initialization sources are supplied.
+
 ## Operating Rule
 
 Do not begin recommendations, query writing, dashboard work, notebook work, remediation, implementation, or automation until the Watch baseline is drafted and reviewed.
@@ -29,6 +31,11 @@ This prompt may draft or update only:
 - `CURRENT_MISSION.md`
 - `PROJECT_STATE.md`
 - `AI_CONTEXT.md`
+- `01_context/CONTEXT_INDEX.md`
+- `01_context/DOMAIN_NOTES.md`
+- `01_context/VOCABULARY.md`
+- `01_context/SYSTEM_OVERVIEW.md`
+- `01_context/TOPOLOGY.md`
 
 This prompt may read supporting files when provided, including:
 
@@ -54,7 +61,43 @@ Proposed Follow-Up File Updates
 
 and stop for confirmation.
 
-This prompt must not directly edit `01_context/`.
+This prompt must not update evidence, query, notebook, report, output, or decision registries from initialization.
+
+## Initialization Context Authority
+
+During initialization, this prompt may update selected `01_context/` files only when durable context is supplied by the human, supplied project files, supplied architecture notes, supplied evidence summaries, or human-confirmed facts.
+
+Allowed initialization context files:
+
+```text
+01_context/CONTEXT_INDEX.md
+01_context/DOMAIN_NOTES.md
+01_context/VOCABULARY.md
+01_context/SYSTEM_OVERVIEW.md
+01_context/TOPOLOGY.md
+```
+
+This prompt must not write:
+
+```text
+guessed domain facts
+AI memory
+generic examples as project facts
+unverified assumptions as confirmed truth
+raw evidence
+large pasted docs
+credentials or restricted data
+```
+
+If the source is weak, classify the item as:
+
+```text
+assumption
+open question
+proposed context update
+```
+
+rather than verified context.
 
 ## Prompt
 
@@ -78,6 +121,11 @@ Before giving recommendations, draft or update these files only:
 CURRENT_MISSION.md
 PROJECT_STATE.md
 AI_CONTEXT.md
+01_context/CONTEXT_INDEX.md
+01_context/DOMAIN_NOTES.md
+01_context/VOCABULARY.md
+01_context/SYSTEM_OVERVIEW.md
+01_context/TOPOLOGY.md
 ```
 
 ## Required Behavior
@@ -116,22 +164,12 @@ external documentation references
 stable operational constraints
 ```
 
-Do not edit `01_context/` files directly.
+If durable context is strong and supported, update the selected `01_context/` file during initialization.
 
-If durable context is found, list proposed updates under:
+If the context source is weak or incomplete, list it under:
 
 ```text
 Proposed Follow-Up File Updates
-```
-
-Possible target files:
-
-```text
-01_context/DOMAIN_NOTES.md
-01_context/VOCABULARY.md
-01_context/SYSTEM_OVERVIEW.md
-01_context/TOPOLOGY.md
-01_context/CONTEXT_INDEX.md
 ```
 
 For each proposed update, include:
@@ -144,6 +182,11 @@ For each proposed update, include:
 - Validation needed: Yes/No/Unknown
 ```
 
+## Artifact Routing Brief
+
+- Must be drafted or refreshed inside `AI_CONTEXT.md` during initialization.
+- Must tell future agents where to store or register evidence, queries, notebooks, reports, outputs, decisions, context, tool notes, workbench material, archives, and automation.
+
 ## Required File Drafts
 
 Draft or update the following controlled files using the approved template structure already present in the project:
@@ -151,6 +194,8 @@ Draft or update the following controlled files using the approved template struc
 - `CURRENT_MISSION.md`
 - `PROJECT_STATE.md`
 - `AI_CONTEXT.md`
+
+When strong supplied sources exist, also draft or update the relevant allowed `01_context/` files using the approved template structure already present in the project.
 
 Preserve existing headings and update only the relevant placeholders or stale sections.
 
@@ -167,6 +212,10 @@ Files drafted or updated:
 - CURRENT_MISSION.md
 - PROJECT_STATE.md
 - AI_CONTEXT.md
+
+Context Files Updated:
+| File | Source | Fact / Assumption | Validation Needed | Notes |
+|---|---|---|---|---|
 
 User-Provided Facts:
 - ...
