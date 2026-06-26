@@ -168,5 +168,5 @@ docker-compose.override.yml
 # *.json
 # *.ndjson
 
-AI_HANDOFF_TO_LOCAL_AGENT*
+AI_HANDOFF*
 CODEX_QA*
