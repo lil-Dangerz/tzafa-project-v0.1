@@ -46,7 +46,7 @@ If edit authorization is not explicit, provide proposed updates only.
 
 ## Required Audit Areas
 
-Inspect the prompt library for unclear purpose, duplicate or overlapping command roles, missing or excessive file authority, missing stop rules, missing response formats, unsafe assumptions, project-specific contamination, WMS-specific leakage into generic template prompts, missing distinction between read-only and editable commands, commands that may silently alter project truth, missing handoff/handon distinction, unclear closeout behavior, and obsolete prompt references.
+Inspect the prompt library for unclear purpose, duplicate or overlapping command roles, missing or excessive file authority, missing stop rules, missing response formats, unsafe assumptions, project-specific contamination, prior-project leakage into generic template prompts, missing distinction between read-only and editable commands, commands that may silently alter project truth, missing handoff/handon distinction, unclear closeout behavior, and obsolete prompt references.
 
 
 ## Required Response Format

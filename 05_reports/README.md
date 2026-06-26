@@ -146,9 +146,9 @@ When useful, organize report work by stable descriptive names.
 Good examples:
 
 ```text
-returns-flow-investigation-summary-2026-06-25.md
-quality-gate-validation-report-q2-2026.qmd
-incident-p1-checkout-postmortem.html
+service-flow-investigation-summary-2026-06-25.md
+quality-review-validation-report-q2-2026.qmd
+critical-incident-postmortem.html
 network-observability-executive-summary.pdf
 ```
 

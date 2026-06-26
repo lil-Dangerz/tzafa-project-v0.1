@@ -107,7 +107,7 @@ tzafa-project/
 copy to:
 
 ```text
-wms-brazil-dashboard/
+service-observability-project/
 ```
 
 or:

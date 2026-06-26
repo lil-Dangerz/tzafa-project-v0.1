@@ -139,10 +139,10 @@ When useful, organize queries by stable descriptive names.
 Good examples:
 
 ```text
-returns-flow-latency-check.esql
-quality-gate-failures-by-project.sql
-checkout-error-rate-trend.kql
-incident-p1-filter.lucene
+service-latency-check.esql
+status-failures-by-project.sql
+service-error-rate-trend.kql
+critical-incident-filter.lucene
 ```
 
 Avoid names like:

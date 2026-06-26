@@ -140,9 +140,9 @@ Good examples:
 
 ```text
 warehouse-exchange-sample-2026-06-25.json
-kibana-dashboard-export-returns-flow.ndjson
-sonar-quality-gate-screenshot-2026-06-25.png
-incident-timeline-export-p1-checkout.csv
+monitoring-dashboard-export-service-flow.ndjson
+quality-review-screenshot-2026-06-25.png
+incident-timeline-export-critical-service.csv
 ```
 
 Avoid names like:
