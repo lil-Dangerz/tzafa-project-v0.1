@@ -120,6 +120,6 @@ When context conflicts with `PROJECT_STATE.md`, treat `PROJECT_STATE.md` as high
 
 ## Last Updated
 
-Local time: `2026-06-26 -06:00 America/Mexico_City`
+Local time: `[YYYY-MM-DD HH:MM timezone]`
 
-Updated by: `Codex`
+Updated by: `[Human/ChatGPT/Codex/etc.]`
