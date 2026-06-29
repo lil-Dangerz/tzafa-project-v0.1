@@ -16,7 +16,7 @@ PROJECT_STATE.md
 AI_CONTEXT.md
 ```
 
-It may also initialize selected durable context files when strong initialization sources are supplied.
+It may also initialize or update selected durable context files when strong initialization sources are supplied.
 
 ## Operating Rule
 
@@ -65,7 +65,7 @@ This prompt must not update evidence, query, notebook, report, output, or decisi
 
 ## Initialization Context Authority
 
-During initialization, this prompt may update selected `01_context/` files only when durable context is supplied by the human, supplied project files, supplied architecture notes, supplied evidence summaries, or human-confirmed facts.
+During initialization, this prompt may initialize or update selected `01_context/` files only when durable context is supplied by explicit human statements, supplied project files, supplied architecture notes, supplied evidence summaries, or human-confirmed facts.
 
 Allowed initialization context files:
 

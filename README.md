@@ -130,7 +130,7 @@ The preferred way to populate them is to use:
 prompts/mission-init.prompt.md
 ```
 
-During initialization, `mission-init.prompt.md` may also initialize selected `01_context/` files when durable context is supplied by the human, supplied project files, supplied architecture notes, supplied evidence summaries, or human-confirmed facts.
+During initialization, `mission-init.prompt.md` may also initialize or update selected `01_context/` files when durable context is supplied by explicit human statements, supplied project files, supplied architecture notes, supplied evidence summaries, or human-confirmed facts.
 
 Allowed initialization context files:
 
@@ -367,7 +367,7 @@ If the task is primarily about automation helpers, script organization, Docker o
 
 When Codex discovers durable domain, vocabulary, system, or topology context, it should obey the active prompt authority and checkpoint rules.
 
-Initialization may update selected `01_context/` files through `mission-init.prompt.md` when the source is strong enough. Outside initialization, agents should propose the correct `01_context/` update instead of silently editing context files.
+Initialization may update selected `01_context/` files through `mission-init.prompt.md` when durable context is supplied by explicit human statements, supplied project files, supplied architecture notes, supplied evidence summaries, or human-confirmed facts. Outside initialization, agents should propose the correct `01_context/` update instead of silently editing context files.
 
 Codex may edit controlled files only when explicitly instructed.
 
@@ -542,7 +542,7 @@ Use these prompts to keep AI-assisted work consistent across ChatGPT, Codex, VS 
 
 | Prompt | Watch Role | Purpose |
 |---|---|---|
-| `mission-init.prompt.md` | Establish the Watch | Establish or refresh `CURRENT_MISSION.md`, `PROJECT_STATE.md`, and `AI_CONTEXT.md`. |
+| `mission-init.prompt.md` | Establish the Watch | Establish or refresh `CURRENT_MISSION.md`, `PROJECT_STATE.md`, and `AI_CONTEXT.md`, and initialize or update selected `01_context/` files when strong durable context is supplied. |
 | `watch-status.prompt.md` | Warden Status | Inspect current operational status. |
 | `threat-map.prompt.md` | Threat Mapping | Analyze risks and blind spots without recommendations. |
 | `context-audit.prompt.md` | Drift Sweep | Detect contradictions, stale context, and contamination risk. |
@@ -942,7 +942,15 @@ Useful follow-up context files after initialization:
 01_context/CONTEXT_INDEX.md
 ```
 
-These files may be proposed during initialization when durable context is detected, but they should be updated only through a later human-approved checkpoint.
+These files may be initialized or updated during initialization when durable context is supplied by explicit human statements, supplied project files, supplied architecture notes, supplied evidence summaries, or human-confirmed facts.
+
+If the context is weak or incomplete, route it into:
+
+```text
+Proposed Follow-Up File Updates
+```
+
+as an assumption, open question, or proposed context update rather than verified context.
 
 Then update these as needed:
 

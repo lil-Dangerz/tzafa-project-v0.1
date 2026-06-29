@@ -213,6 +213,6 @@ Do not treat vocabulary notes as verified evidence unless they cite registered e
 
 ## Last Updated
 
-Local time: `2026-06-26 -06:00 America/Mexico_City`
+Local time: `[YYYY-MM-DD HH:MM timezone]`
 
-Updated by: `Codex`
+Updated by: `[Human/ChatGPT/Codex/etc.]`

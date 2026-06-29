@@ -101,6 +101,6 @@ This mission is complete when:
 
 ## Last Updated
 
-Local time: `2026-06-26 -06:00 America/Mexico_City`
+Local time: `[YYYY-MM-DD HH:MM timezone]`
 
-Updated by: `Codex`
+Updated by: `[Human/ChatGPT/Codex/etc.]`

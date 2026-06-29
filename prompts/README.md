@@ -20,7 +20,7 @@ Do not store project findings, raw logs, query results, evidence, or investigati
 
 | Prompt | Watch Role | Purpose | Default Authority |
 |---|---|---|---|
-| `mission-init.prompt.md` | Establish the Watch | Establish or refresh the Watch baseline and propose follow-up context updates when durable context is discovered. | Edits `CURRENT_MISSION.md`, `PROJECT_STATE.md`, `AI_CONTEXT.md` only |
+| `mission-init.prompt.md` | Establish the Watch | Establish or refresh the Watch baseline and initialize or update selected `01_context/` files when strong durable context is supplied. | Edits `CURRENT_MISSION.md`, `PROJECT_STATE.md`, `AI_CONTEXT.md`, and selected `01_context/` files during initialization only |
 | `watch-status.prompt.md` | Warden Status | Inspect current operational status. | Read-only |
 | `threat-map.prompt.md` | Threat Mapping | Analyze risks and blind spots without recommendations. | Read-only |
 | `context-audit.prompt.md` | Drift Sweep | Detect contradictions, stale context, and contamination risk. | Read-only |
