@@ -77,7 +77,7 @@ stale     = no longer current against the latest evidence, queries, or mission
 
 | Notebook ID | Name | Type | Location / Reference | Purpose | Status | Environment / Kernel | Input Evidence | Query References | Output References | Reproducibility / Risk | Replacement / Deprecation | Mission Fit | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| N-0001 | `[Notebook name]` | `[Type]` | `[Path, URL, system, or note]` | `[Purpose]` | `[Status]` | `[Kernel, runtime, or Unknown]` | `[Evidence IDs, path, or Unknown]` | `[Query IDs, path, or None]` | `[Output path, report link, or None]` | `[Reproducibility note, local path risk, stale dependency risk, or Unknown]` | `[Replacement, deprecation, or None]` | `[Supports mission / Partial / No / Unknown]` | `[Notes]` |
+| N-0001 | `search-latency-and-freshness-review.ipynb` | `jupyter` | `04_notebooks/jupyter/search-latency-and-freshness-review.ipynb` | `Explore search latency percentiles and freshness degradation patterns.` | `working` | `Python 3.12 / pandas / matplotlib [dummy environment]` | `E-0001, E-0002, E-0005` | `Q-0001, Q-0002, Q-0003` | `O-0001, O-0002` | `Partially reproducible as a native dummy notebook, but evidence and outputs remain dummy artifacts and no executed result snapshot is captured.` | `None` | `Supports mission` | `Notebook is suitable for workflow testing but not for truth validation.` |
 
 ## Registration Rules
 

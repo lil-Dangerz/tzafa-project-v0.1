@@ -65,10 +65,10 @@ unknown
 
 | ID | Status | Type | Context File | Purpose | Source / Reference | Owner | Last Reviewed | Notes |
 |---|---|---|---|---|---|---|---|---|
-| C-0001 | `draft` | `domain` | `01_context/DOMAIN_NOTES.md` | `Durable domain background, operating assumptions, and business rules.` | `[Pending]` | `[Owner or Unknown]` | `[YYYY-MM-DD]` | `Reusable template entry awaiting project-specific context.` |
-| C-0002 | `draft` | `vocabulary` | `01_context/VOCABULARY.md` | `Durable terms, acronyms, labels, and interpretation rules.` | `[Pending]` | `[Owner or Unknown]` | `[YYYY-MM-DD]` | `Reusable template entry awaiting project-specific context.` |
-| C-0003 | `draft` | `system_overview` | `01_context/SYSTEM_OVERVIEW.md` | `High-level structural overview of major components and responsibilities.` | `[Pending]` | `[Owner or Unknown]` | `[YYYY-MM-DD]` | `Reusable template entry awaiting project-specific context.` |
-| C-0004 | `draft` | `topology` | `01_context/TOPOLOGY.md` | `High-level connections, dependency paths, and flow summaries.` | `[Pending]` | `[Owner or Unknown]` | `[YYYY-MM-DD]` | `Reusable template entry awaiting project-specific context.` |
+| C-0001 | `active` | `domain` | `01_context/DOMAIN_NOTES.md` | `Durable domain background, operating assumptions, and business rules for the dummy search reliability watch.` | `Dry-run mission scenario.` | `Human + Codex dry run` | `2026-06-29` | `Initialized from supplied reliability, freshness, and severity context.` |
+| C-0002 | `active` | `vocabulary` | `01_context/VOCABULARY.md` | `Durable terms, acronyms, labels, and interpretation rules for the dummy mission.` | `Dry-run mission scenario.` | `Human + Codex dry run` | `2026-06-29` | `Initialized from supplied search reliability terminology.` |
+| C-0003 | `active` | `system_overview` | `01_context/SYSTEM_OVERVIEW.md` | `High-level structural overview of the fictional catalog search service.` | `Dry-run mission scenario.` | `Human + Codex dry run` | `2026-06-29` | `Initialized from supplied service components and observability notes.` |
+| C-0004 | `active` | `topology` | `01_context/TOPOLOGY.md` | `High-level connections, dependency paths, and flow summaries for the fictional catalog search service.` | `Dry-run mission scenario.` | `Human + Codex dry run` | `2026-06-29` | `Initialized from supplied component and observability topology.` |
 
 ## Update Rules
 

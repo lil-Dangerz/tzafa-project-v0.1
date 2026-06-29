@@ -38,7 +38,7 @@ Record the reason it should not be used and what, if anything, replaces it.
 
 | Evidence ID | Name | Original Location / Reference | Reason Deprecated | Replacement / Conflict | Date Marked | Safe to Reuse? | Notes |
 |---|---|---|---|---|---|---|---|
-| E-0001 | `[Evidence name]` | `[Path, URL, system, or note]` | `[Why it should no longer be used]` | `[Replacement, conflict, or None]` | `[YYYY-MM-DD HH:MM timezone or Unknown]` | `[Yes/No/Unknown]` | `[Notes]` |
+| E-0004 | `stale-result-alert-screenshot-2026-06-29.png` | `02_evidence/stale-result-alert-screenshot-2026-06-29.png` | `Shortened screenshot may hide the active filters and exact time range.` | `Replaced by E-0005` | `2026-06-29 10:35 America/Mexico_City` | `No` | `Keep for traceability only; use the full screenshot for later review.` |
 
 ## Deprecation Triggers
 

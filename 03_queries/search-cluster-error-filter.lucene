@@ -1,0 +1,1 @@
+cluster_error:true AND service:search-cluster AND missing_field_name:*

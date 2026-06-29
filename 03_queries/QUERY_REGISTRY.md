@@ -80,7 +80,10 @@ validated = explicitly confirmed correct for stated purpose
 
 | Query ID | Name | Type | Location / Reference | Purpose | Status | Evidence Support | Related Notebook / Report | Replacement / Deprecation | Validation Notes | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| Q-0001 | `[Query name]` | `[Type]` | `[Path, URL, system, or note]` | `[Purpose]` | `[Status]` | `[Evidence ID, path, or Unknown]` | `[Notebook/report reference or None]` | `[Replacement, deprecation, or None]` | `[Validation note]` | `[Notes]` |
+| Q-0001 | `search-latency-percentiles.esql` | `esql` | `03_queries/search-latency-percentiles.esql` | `Measure latency percentiles for search requests over time.` | `draft` | `E-0001` | `N-0001` | `None` | `Native dummy query file created on the dry-run branch; not executed.` | `Intended to support later latency trend analysis.` |
+| Q-0002 | `stale-result-alerts.kql` | `kql` | `03_queries/stale-result-alerts.kql` | `Filter observability events associated with stale-result alert conditions.` | `tested` | `E-0004, E-0005` | `N-0001` | `None` | `Dummy execution assumed for dry-run classification, but correctness is not confirmed.` | `Should be preferred over screenshot-only interpretation once validated against raw events.` |
+| Q-0003 | `freshness-bucket-summary.sql` | `sql` | `03_queries/freshness-bucket-summary.sql` | `Summarize freshness age distribution into operational buckets.` | `draft` | `E-0002` | `N-0001` | `None` | `Native dummy query file created on the dry-run branch; not executed.` | `Candidate query for later notebook-based freshness distribution review.` |
+| Q-0004 | `search-cluster-error-filter.lucene` | `lucene` | `03_queries/search-cluster-error-filter.lucene` | `Identify search-cluster error events relevant to degraded search quality.` | `broken` | `E-0001` | `None` | `Superseded candidate pending replacement` | `Known broken in dry-run scenario because field names are not yet confirmed.` | `Do not reuse until evidence-backed field names are confirmed.` |
 
 ## Registration Rules
 

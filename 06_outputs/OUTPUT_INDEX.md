@@ -80,7 +80,8 @@ superseded = replaced by a newer or better output
 
 | Output ID | Name | Type | Location / Reference | Purpose | Status | Source Relationship | Related Evidence / Query / Notebook / Report | Replacement / Deprecation | Validation / Reuse Notes | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| O-0001 | `[Output name]` | `[Type]` | `[Path, URL, system, or note]` | `[Purpose]` | `[Status]` | `[Generated from notebook/report/query/dashboard/manual process or Unknown]` | `[Evidence/query/notebook/report reference or None]` | `[Replacement, deprecation, or None]` | `[Validation, reuse, or risk note]` | `[Notes]` |
+| O-0001 | `search-latency-percentiles-2026-06-29.png` | `chart` | `06_outputs/search-latency-percentiles-2026-06-29.png` | `Visualize dummy search latency percentile distribution.` | `working` | `Generated from notebook` | `E-0001, Q-0001, N-0001` | `None` | `Native dummy output file exists, but it remains unvalidated for analytical correctness.` | `Derived during dummy notebook review.` |
+| O-0002 | `freshness-bucket-summary-2026-06-29.csv` | `csv_export` | `06_outputs/freshness-bucket-summary-2026-06-29.csv` | `Summarize freshness age into operational buckets for later reporting.` | `working` | `Generated from notebook` | `E-0002, Q-0003, N-0001` | `None` | `Native dummy output file exists, but the underlying query and evidence remain unvalidated.` | `Derived during dummy notebook review.` |
 
 ## Registration Rules
 

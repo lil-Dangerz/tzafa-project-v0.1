@@ -72,7 +72,11 @@ unknown
 
 | Evidence ID | Name | Type | Location / Reference | Source | Status | Date / Time | Form | Sensitive? | Replaces / Conflicts | Validation Needed | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| E-0001 | `[Evidence name]` | `[Type]` | `[Path, URL, system, or note]` | `[Source]` | `[Status]` | `[YYYY-MM-DD HH:MM timezone or Unknown]` | `[original/copy/export/shortened/transformed/derived/unknown]` | `[Yes/No/Unknown]` | `[Reference or None]` | `[Yes/No/Unknown]` | `[Notes]` |
+| E-0001 | `search-api-latency-sample-2026-06-29.ndjson` | `log` | `02_evidence/search-api-latency-sample-2026-06-29.ndjson` | `Dry-run dummy evidence supplied during evidence-intake` | `working` | `2026-06-29 10:15 America/Mexico_City` | `export` | `No` | `None` | `Yes` | `Native dummy log sample created on the dry-run branch; not yet validated against a source system.` |
+| E-0002 | `catalog-index-freshness-export-2026-06-29.csv` | `metric_export` | `02_evidence/catalog-index-freshness-export-2026-06-29.csv` | `Dry-run dummy evidence supplied during evidence-intake` | `working` | `2026-06-29 10:20 America/Mexico_City` | `export` | `No` | `None` | `Yes` | `Native dummy metric export for freshness age analysis.` |
+| E-0003 | `kibana-search-reliability-dashboard-2026-06-29.ndjson` | `dashboard_export` | `02_evidence/kibana-search-reliability-dashboard-2026-06-29.ndjson` | `Dry-run dummy evidence supplied during evidence-intake` | `raw` | `2026-06-29 10:25 America/Mexico_City` | `export` | `No` | `None` | `Yes` | `Native dummy dashboard export referenced for later panel review; correctness not yet assessed.` |
+| E-0004 | `stale-result-alert-screenshot-2026-06-29.png` | `screenshot` | `02_evidence/stale-result-alert-screenshot-2026-06-29.png` | `Dry-run dummy evidence supplied during evidence-intake` | `working` | `2026-06-29 10:27 America/Mexico_City` | `copy` | `No` | `Conflicts with E-0005` | `Yes` | `Native dummy screenshot placeholder; may not show all applied filters.` |
+| E-0005 | `stale-result-alert-screenshot-full-2026-06-29.png` | `screenshot` | `02_evidence/stale-result-alert-screenshot-full-2026-06-29.png` | `Dry-run dummy evidence supplied during evidence-intake` | `working` | `2026-06-29 10:29 America/Mexico_City` | `original` | `No` | `Replaces E-0004 for full filter visibility` | `Yes` | `Native dummy screenshot placeholder preferred over the shortened copy.` |
 
 ## Registration Rules
 

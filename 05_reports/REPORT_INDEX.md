@@ -75,7 +75,7 @@ published  = approved and treated as issued or delivered
 
 | Report ID | Name | Type | Location / Reference | Purpose | Audience | Status | Evidence Support | Related Query / Notebook / Output | Replacement / Deprecation | Approval / Publication Notes | Notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| R-0001 | `[Report name]` | `[Type]` | `[Path, URL, system, or note]` | `[Purpose]` | `[Audience or Unknown]` | `[Status]` | `[Evidence IDs, path, or Unknown]` | `[Query/notebook/output reference or None]` | `[Replacement, deprecation, or None]` | `[Approval, publication, or review note]` | `[Notes]` |
+| R-0001 | `dry-run-validation-report-2026-06-29.md` | `validation_report` | `05_reports/dry-run-validation-report-2026-06-29.md` | `Document the full dummy dry run, its findings, and the recommended reusable-template follow-up.` | `Human QA, AI QA, template maintainer` | `draft` | `E-0001, E-0002, E-0003, E-0004, E-0005` | `Q-0001, Q-0002, Q-0003, Q-0004; N-0001; O-0001; O-0002` | `None` | `Not yet approved; includes a planned future implementation target on development.` | `Dry-run validation artifact for branch-level review only; do not treat as reusable project truth.` |
 
 ## Current Reports
 

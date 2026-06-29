@@ -1,0 +1,4 @@
+{"timestamp":"2026-06-29T10:15:00-06:00","service":"search-api","request_id":"req-1001","search_ms":182,"status":"ok"}
+{"timestamp":"2026-06-29T10:15:05-06:00","service":"search-api","request_id":"req-1002","search_ms":491,"status":"ok"}
+{"timestamp":"2026-06-29T10:15:10-06:00","service":"search-api","request_id":"req-1003","search_ms":1270,"status":"degraded"}
+{"timestamp":"2026-06-29T10:15:15-06:00","service":"search-api","request_id":"req-1004","search_ms":2450,"status":"degraded"}

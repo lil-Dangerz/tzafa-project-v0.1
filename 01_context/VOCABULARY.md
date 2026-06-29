@@ -80,49 +80,49 @@ Do not store:
 ## Vocabulary Summary
 
 ```text
-[Vocabulary Summary]
+Shared search reliability language for interpreting latency, freshness, severity, and observability terms in a fictional catalog search service.
 ```
 
 ## Core Terms
 
 | Term | Meaning | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Term]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
-| `[Term]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
-| `[Term]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| `stale result` | `Search result returned from index data older than the allowed freshness window.` | `Dry-run mission scenario` | `active` | `Must not be treated as the same issue as slow response latency.` |
+| `search latency` | `Observed time required to return search results to the caller.` | `Dry-run mission scenario` | `active` | `Distinct from freshness degradation.` |
+| `search_status` | `Lifecycle or outcome label for a search request.` | `Dry-run mission scenario` | `draft` | `Exact status values are not yet supplied.` |
 
 ## Acronyms and Abbreviations
 
 | Acronym | Expansion | Meaning in Project Context | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Acronym]` | `[Expansion]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Acronym]` | `[Expansion]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `SLO` | `Service Level Objective` | `Target reliability objective for the search service.` | `Dry-run mission scenario` | `active` |
+| `P99` | `99th percentile` | `High-latency percentile commonly used for response-time evaluation.` | `Dry-run mission scenario` | `active` |
 
 ## Field and Label Meanings
 
 | Field / Label | Meaning | System / Area | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Field / Label]` | `[Meaning]` | `[System / Area]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Field / Label]` | `[Meaning]` | `[System / Area]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `result_freshness_minutes` | `Measured age of indexed data in minutes.` | `Search / observability` | `Dry-run mission scenario` | `active` |
+| `error_budget_burn` | `Rate at which the reliability budget is being consumed.` | `Reliability / observability` | `Dry-run mission scenario` | `active` |
 
 ## Naming Conventions
 
 | Convention | Meaning / Rule | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Convention]` | `[Meaning / Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
-| `[Convention]` | `[Meaning / Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| `Freshness degradation threshold` | `Values above 15 minutes should be interpreted as degraded search freshness.` | `Dry-run mission scenario` | `active` | `Operational interpretation rule.` |
+| `Severity shorthand` | `P1 and P2 should be interpreted using the supplied mission severity definitions.` | `Dry-run mission scenario` | `active` | `Shared incident labeling rule.` |
 
 ## Ambiguous or Risky Terms
 
 | Term | Risk | Correct Interpretation Rule | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Term]` | `[Risk]` | `[Correct Interpretation Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Term]` | `[Risk]` | `[Correct Interpretation Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `stale result` | `Can be confused with latency issues.` | `Treat stale-result behavior as an index freshness issue unless evidence shows otherwise.` | `Dry-run mission scenario` | `active` |
+| `search_status` | `Exact status values are not yet supplied.` | `Use the term generically until concrete values are supplied by evidence or human clarification.` | `Dry-run mission scenario` | `draft` |
 
 ## Out-of-Scope Vocabulary
 
 ```text
-[Out-of-scope vocabulary boundary]
+Internal search-engine field enumerations and unsupplied status value lists are not normalized by this dry run.
 ```
 
 ## Context Update Trigger

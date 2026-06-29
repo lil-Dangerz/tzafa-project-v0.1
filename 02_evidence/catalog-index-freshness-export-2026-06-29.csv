@@ -1,0 +1,5 @@
+timestamp,index_name,result_freshness_minutes,status
+2026-06-29T10:20:00-06:00,catalog-main,3,ok
+2026-06-29T10:20:00-06:00,catalog-main,7,ok
+2026-06-29T10:20:00-06:00,catalog-main,18,degraded
+2026-06-29T10:20:00-06:00,catalog-main,26,degraded

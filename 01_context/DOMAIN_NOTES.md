@@ -80,49 +80,49 @@ Do not store:
 ## Domain Summary
 
 ```text
-[Domain Summary]
+Fictional catalog search reliability work focused on response latency, result freshness, and interpretation of stale-result conditions.
 ```
 
 ## Business / Operational Context
 
 ```text
-[Business / operational context]
+Users submit search requests through a web experience, the service retrieves ranked results from a search cluster, and the mission distinguishes stale indexed data from slow response behavior.
 ```
 
 ## Known Process Stages
 
 | Stage | Description | Source / Reference | Status |
 |---|---|---|---|
-| `[Stage]` | `[Description]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Stage]` | `[Description]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Stage]` | `[Description]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `Search request` | `User submits a search query through the frontend into the application path.` | `Dry-run mission scenario` | `active` |
+| `Query execution` | `The query service resolves ranked results from the search cluster.` | `Dry-run mission scenario` | `active` |
+| `Index refresh` | `Catalog updates are applied to the search cluster by the indexer.` | `Dry-run mission scenario` | `active` |
 
 ## Known Business Rules
 
 | Rule ID | Rule | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| BR-0001 | `[Business Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
-| BR-0002 | `[Business Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
-| BR-0003 | `[Business Rule]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| BR-0001 | `A stale result is not the same as slow response latency.` | `Dry-run mission scenario` | `active` | `Interpretation rule for search reliability analysis.` |
+| BR-0002 | `Result freshness older than 15 minutes is considered degraded freshness.` | `Dry-run mission scenario` | `active` | `Operational freshness threshold supplied by the dry-run scenario.` |
+| BR-0003 | `P1 means broad user-facing outage and P2 means degraded search quality or latency with partial workaround.` | `Dry-run mission scenario` | `active` | `Severity interpretation rule.` |
 
 ## Domain Assumptions
 
 | ID | Assumption | Source / Reference | Status | Validation Needed |
 |---|---|---|---|---|
-| A-0001 | `[Assumption]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Yes/No/Unknown]` |
-| A-0002 | `[Assumption]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Yes/No/Unknown]` |
+| A-0001 | `Search freshness calculations are expected to depend on index update timing, but the exact index refresh mechanism is not yet described.` | `Dry-run mission scenario` | `draft` | `Yes` |
+| A-0002 | `User-visible stale results may surface even when raw query latency is normal, but no evidence has validated the operational conditions yet.` | `Dry-run mission scenario` | `draft` | `Yes` |
 
 ## Known Constraints
 
 | Constraint | Impact | Source / Reference | Status |
 |---|---|---|---|
-| `[Constraint]` | `[Impact]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Constraint]` | `[Impact]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `Only dummy scenario facts may be used during initialization.` | `Prevents contamination with real company or inferred data.` | `Dry-run instructions` | `active` |
+| `No evidence artifacts exist yet.` | `Prevents validation of operational claims beyond supplied human facts.` | `Dry-run instructions` | `active` |
 
 ## Out-of-Scope Domain Notes
 
 ```text
-[Out-of-scope domain boundary]
+Real company search implementations, production customer data, and non-search business domains are intentionally out of scope.
 ```
 
 ## Context Update Trigger

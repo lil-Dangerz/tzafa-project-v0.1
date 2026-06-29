@@ -1,0 +1,4 @@
+freshness_bucket,bucket_count
+under_5m,1
+under_15m,1
+over_15m,2

@@ -81,43 +81,49 @@ Do not store:
 ## System Summary
 
 ```text
-[System Summary]
+Fictional catalog search service with an application path for query execution, an index-refresh path for freshness, and an observability path through Elasticsearch and Kibana.
 ```
 
 ## Major Components
 
 | Component | Role / Responsibility | Upstream / Downstream | Source / Reference | Status |
 |---|---|---|---|---|
-| `[System Component]` | `[Role / Responsibility]` | `[Upstream / Downstream]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[System Component]` | `[Role / Responsibility]` | `[Upstream / Downstream]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[System Component]` | `[Role / Responsibility]` | `[Upstream / Downstream]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `Web Frontend` | `User-facing entry point for catalog search.` | `Search API` | `Dry-run mission scenario` | `active` |
+| `Search API` | `Receives requests and coordinates application-side search flow.` | `Web Frontend, Query Service` | `Dry-run mission scenario` | `active` |
+| `Query Service` | `Builds and submits ranked search requests.` | `Search API, Search Cluster` | `Dry-run mission scenario` | `active` |
+| `Indexer` | `Applies catalog updates into searchable form.` | `Catalog updates, Search Cluster` | `Dry-run mission scenario` | `active` |
+| `Search Cluster` | `Stores and serves indexed search data.` | `Query Service, Indexer` | `Dry-run mission scenario` | `active` |
+| `Elasticsearch` | `Expected observability store for logs and metrics.` | `Kibana` | `Dry-run mission scenario` | `active` |
+| `Kibana` | `Expected dashboard and observability interface.` | `Elasticsearch` | `Dry-run mission scenario` | `active` |
 
 ## Major Data or Control Flows
 
 | Flow | Description | Source / Destination | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Flow]` | `[Description]` | `[Source / Destination]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Flow]` | `[Description]` | `[Source / Destination]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Flow]` | `[Description]` | `[Source / Destination]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `Search request flow` | `User search requests move through the application path into query execution.` | `Web Frontend -> Search API -> Query Service -> Search Cluster` | `Dry-run mission scenario` | `active` |
+| `Index refresh flow` | `Catalog updates move into the indexing path before affecting user-visible freshness.` | `Catalog Updates -> Indexer -> Search Cluster` | `Dry-run mission scenario` | `active` |
+| `Observability flow` | `Operational signals are expected to move into the observability stack.` | `Logs/Metrics -> Elasticsearch -> Kibana Dashboards` | `Dry-run mission scenario` | `active` |
 
 ## External Systems and Integrations
 
 | System / Integration | Purpose | Relationship to Project | Source / Reference | Status |
 |---|---|---|---|---|
-| `[System / Integration]` | `[Purpose]` | `[Relationship to Project]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[System / Integration]` | `[Purpose]` | `[Relationship to Project]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `Search Cluster` | `Indexed search storage and retrieval` | `Primary dependency for latency and freshness behavior.` | `Dry-run mission scenario` | `active` |
+| `Elasticsearch` | `Observability storage and search` | `Expected destination for logs and metrics.` | `Dry-run mission scenario` | `active` |
+| `Kibana` | `Observability dashboards` | `Expected dashboard layer over Elasticsearch.` | `Dry-run mission scenario` | `active` |
 
 ## User-Facing and Internal Boundaries
 
 | Boundary | Meaning | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Boundary]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
-| `[Boundary]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| `User-facing boundary` | `The web frontend and search response experience are user-facing.` | `Dry-run mission scenario` | `active` | `Relevant to outage and degradation interpretation.` |
+| `Index freshness boundary` | `Indexer and search cluster freshness behavior are separate from request latency flow.` | `Dry-run mission scenario` | `active` | `Relevant to stale-result interpretation.` |
+| `Observability boundary` | `Elasticsearch and Kibana form the observability layer rather than the search execution path.` | `Dry-run mission scenario` | `active` | `Used for later investigation, not yet evidenced.` |
 
 ## Out-of-Scope System Notes
 
 ```text
-[Out-of-scope system boundary]
+Deployment internals, shard layout, and infrastructure scaling behavior are not described by this dry run.
 ```
 
 ## Context Update Trigger

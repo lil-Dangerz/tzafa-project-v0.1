@@ -1,0 +1,1 @@
+{"type":"dashboard","id":"dummy-search-reliability-dashboard","attributes":{"title":"Dummy Search Reliability Dashboard","description":"Dry-run dashboard export for routing validation.","panelsJSON":"[{\"panelIndex\":\"1\",\"type\":\"visualization\",\"title\":\"Search Latency P99\"},{\"panelIndex\":\"2\",\"type\":\"visualization\",\"title\":\"Freshness Age\"}]"}}

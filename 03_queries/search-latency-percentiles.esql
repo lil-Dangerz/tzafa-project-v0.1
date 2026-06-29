@@ -1,0 +1,7 @@
+FROM search_api_logs
+| STATS
+    p50_latency = PERCENTILE(search_ms, 50),
+    p95_latency = PERCENTILE(search_ms, 95),
+    p99_latency = PERCENTILE(search_ms, 99)
+  BY DATE_TRUNC(1 minute, @timestamp)
+| SORT DATE_TRUNC(1 minute, @timestamp) ASC

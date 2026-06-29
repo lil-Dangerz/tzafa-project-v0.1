@@ -81,37 +81,44 @@ Do not store:
 ## Topology Summary
 
 ```text
-[Topology Summary]
+The fictional catalog search service has a user-facing search path, an index-refresh path, and an observability path through Elasticsearch and Kibana.
 ```
 
 ## Major Connections
 
 | Source | Destination | Relationship / Flow | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Source]` | `[Destination]` | `[Relationship / Flow]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Source]` | `[Destination]` | `[Relationship / Flow]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Source]` | `[Destination]` | `[Relationship / Flow]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `Web Frontend` | `Search API` | `User search requests flow into application handling.` | `Dry-run mission scenario` | `active` |
+| `Search API` | `Query Service` | `Application requests move into ranked query execution handling.` | `Dry-run mission scenario` | `active` |
+| `Query Service` | `Search Cluster` | `Search queries are resolved against indexed data.` | `Dry-run mission scenario` | `active` |
+| `Catalog Updates` | `Indexer` | `Catalog changes enter the index-refresh path.` | `Dry-run mission scenario` | `active` |
+| `Indexer` | `Search Cluster` | `Indexed updates affect future search freshness.` | `Dry-run mission scenario` | `active` |
+| `Logs/Metrics` | `Elasticsearch` | `Observability signals are expected to land in the storage and search layer.` | `Dry-run mission scenario` | `active` |
+| `Elasticsearch` | `Kibana Dashboards` | `Dashboards are expected to read from the observability store.` | `Dry-run mission scenario` | `active` |
 
 ## Dependency Paths
 
 | Dependency Path | Description | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Dependency Path]` | `[Description]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
-| `[Dependency Path]` | `[Description]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| `Web Frontend -> Search API -> Query Service -> Search Cluster` | `Primary user-facing search dependency path.` | `Dry-run mission scenario` | `active` | `Critical path for response latency interpretation.` |
+| `Catalog Updates -> Indexer -> Search Cluster` | `Index refresh dependency path.` | `Dry-run mission scenario` | `active` | `Critical path for stale-result interpretation.` |
+| `Logs/Metrics -> Elasticsearch -> Kibana Dashboards` | `Observability dependency path.` | `Dry-run mission scenario` | `active` | `Used later for investigation and visualization.` |
 
 ## Data or Event Flows
 
 | Flow | Description | Trigger / Direction | Source / Reference | Status |
 |---|---|---|---|---|
-| `[Flow]` | `[Description]` | `[Trigger / Direction]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
-| `[Flow]` | `[Description]` | `[Trigger / Direction]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` |
+| `Search response flow` | `Search requests move through the application path into the search cluster and back to the caller.` | `Synchronous request path` | `Dry-run mission scenario` | `active` |
+| `Index freshness flow` | `Catalog updates move toward indexed availability before affecting user-visible results.` | `Asynchronous update path` | `Dry-run mission scenario` | `active` |
+| `Observability flow` | `Logs and metrics are expected to support later dashboards and analysis.` | `Operational signal path` | `Dry-run mission scenario` | `active` |
 
 ## Environment or Boundary Notes
 
 | Boundary | Meaning | Source / Reference | Status | Notes |
 |---|---|---|---|---|
-| `[Boundary]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
-| `[Boundary]` | `[Meaning]` | `[Source / Reference or Pending]` | `[draft/active/stale/unknown]` | `[Notes]` |
+| `User request boundary` | `Boundary between the user-facing frontend and the application service path.` | `Dry-run mission scenario` | `active` | `Relevant to user-visible degradation.` |
+| `Index refresh boundary` | `Boundary between request-serving flow and update propagation flow.` | `Dry-run mission scenario` | `active` | `Relevant to stale-result interpretation.` |
+| `Application to observability edge` | `Boundary between service execution and the observability stack.` | `Dry-run mission scenario` | `active` | `Observability is expected to observe, not execute, search behavior.` |
 
 ## Diagram Space
 
@@ -121,9 +128,13 @@ Example:
 
 ```mermaid
 flowchart LR
-    A["[Source System]"] --> B["[Processing System]"]
-    B --> C["[Storage or Consumer]"]
-    D["[Observation Source]"] --> E["[Monitoring Surface]"]
+    A["Web Frontend"] --> B["Search API"]
+    B --> C["Query Service"]
+    C --> D["Search Cluster"]
+    E["Catalog Updates"] --> F["Indexer"]
+    F --> D
+    G["Logs / Metrics"] --> H["Elasticsearch"]
+    H --> I["Kibana Dashboards"]
 ```
 
 Use diagrams for:
@@ -140,7 +151,7 @@ handoff points
 ## Out-of-Scope Topology Notes
 
 ```text
-[Out-of-scope topology boundary]
+Low-level network paths, cluster internals, and vendor-specific infrastructure topology are intentionally not described by this dry run.
 ```
 
 ## Context Update Trigger

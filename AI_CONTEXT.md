@@ -189,39 +189,43 @@ Automation and agent support -> `10_automation/`
 
 ## Project Summary
 
-`[Project summary]`
+`Dummy Catalog Search Reliability Watch is a fictional observability project initialized to investigate latency and stale-result behavior without relying on chat memory.`
 
 ## Domain
 
-`[Domain or Unknown]`
+`Search reliability / observability`
 
 ## Current Mission Snapshot
 
-`[Current mission snapshot]`
+`Initialize the dummy catalog search reliability watch, capture durable context into 01_context, and prepare routing-aware project memory before any evidence, queries, dashboards, notebooks, reports, or outputs exist.`
 
 ## Key Systems
 
 | System | Purpose | Notes |
 |---|---|---|
-| `[System Component]` | `[Purpose]` | `[Notes]` |
-| `[System Component]` | `[Purpose]` | `[Notes]` |
-| `[System Component]` | `[Purpose]` | `[Notes]` |
+| `Web Frontend` | `User-facing search entry point` | `Upstream of the search API in the supplied topology.` |
+| `Search API` | `Receives search requests and coordinates the retrieval flow` | `Connects frontend, query service, and observability assumptions.` |
+| `Query Service` | `Builds and submits ranked search requests to the search cluster` | `Critical path for latency and stale-result interpretation.` |
+| `Indexer` | `Applies catalog updates to the search cluster` | `Relevant to result freshness and stale-result analysis.` |
+| `Search Cluster` | `Stores and serves indexed search data` | `Primary dependency for result freshness and query response behavior.` |
+| `Elasticsearch` | `Expected storage and query layer for logs and metrics` | `Human-supplied expected observability destination.` |
+| `Kibana` | `Expected dashboard and observability surface` | `Human-supplied expected dashboard layer.` |
 
 ## Key Data Sources
 
 | Source | Type | Location / Reference | Notes |
 |---|---|---|---|
-| `[Source]` | `[Type]` | `[Location / Reference]` | `[Notes]` |
-| `[Source]` | `[Type]` | `[Location / Reference]` | `[Notes]` |
-| `[Source]` | `[Type]` | `[Location / Reference]` | `[Notes]` |
+| `Search service logs` | `Logs` | `Expected in Elasticsearch` | `Dry-run expectation only; not yet verified by evidence.` |
+| `Search dashboards` | `Dashboards` | `Expected in Kibana` | `Dry-run expectation only; no dashboard assets supplied yet.` |
+| `Future reliability analysis` | `Notebook` | `Potential later notebook work` | `Notebook analysis may be used later; no notebook exists yet.` |
 
 ## Important Vocabulary
 
 | Term | Meaning | Notes |
 |---|---|---|
-| `[Term]` | `[Meaning]` | `[Notes]` |
-| `[Term]` | `[Meaning]` | `[Notes]` |
-| `[Term]` | `[Meaning]` | `[Notes]` |
+| `stale result` | `Search result returned from index data older than the allowed freshness window` | `Distinct from slow response latency.` |
+| `result_freshness_minutes` | `Measured age of indexed search data in minutes` | `Dry-run field meaning.` |
+| `error_budget_burn` | `Rate at which search reliability budget is being consumed` | `Dry-run reliability term.` |
 
 ## Active Constraints
 
@@ -233,14 +237,15 @@ Automation and agent support -> `10_automation/`
 
 | Reference | Type | Location | Notes |
 |---|---|---|---|
-| `[Reference]` | `[Type]` | `[Location]` | `[Notes]` |
-| `[Reference]` | `[Type]` | `[Location]` | `[Notes]` |
+| `Mission initialization prompt` | `Prompt` | `prompts/mission-init.prompt.md` | `Defines allowed initialization edits for this dry run.` |
+| `Context catalog` | `Context` | `01_context/CONTEXT_INDEX.md` | `Tracks the initialized durable context files.` |
+| `Mission order` | `Control` | `CURRENT_MISSION.md` | `Active dummy mission definition.` |
 
 ## Known Bad or Deprecated References
 
 | Reference | Type | Location | Reason |
 |---|---|---|---|
-| `[Reference or None recorded]` | `[Type or None]` | `[Location or None]` | `[Reason]` |
+| `None recorded` | `None` | `None` | `No deprecated references have been recorded during initialization.` |
 
 ## AI Behavior Rules
 

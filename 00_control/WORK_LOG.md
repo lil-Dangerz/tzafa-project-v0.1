@@ -44,7 +44,10 @@ Use one of:
 
 | Local Date/Time | Actor | Activity | Files Changed / Referenced | Status | Follow-Up |
 |---|---|---|---|---|---|
-| `[YYYY-MM-DD HH:MM timezone]` | `[Actor]` | `[Initial entry]` | `[Path(s)]` | `[status]` | `[Follow-up]` |
+| `2026-06-29 10:40 America/Mexico_City` | `Codex` | `Initialized the dummy catalog search reliability mission baseline and populated selected 01_context files from supplied dry-run context.` | `CURRENT_MISSION.md; PROJECT_STATE.md; AI_CONTEXT.md; 01_context/` | `completed` | `Continue with evidence, query, notebook, and output dry-run routing.` |
+| `2026-06-29 11:20 America/Mexico_City` | `Codex` | `Registered dummy evidence, query, notebook, and output records, then created native dummy artifacts to match the routed paths.` | `02_evidence/; 03_queries/; 04_notebooks/; 06_outputs/` | `completed` | `Review dashboard surface and close out the validation phase.` |
+| `2026-06-29 12:05 America/Mexico_City` | `Codex` | `Completed a read-only dashboard review and drafted closeout findings for the dry-run validation phase.` | `prompts/dashboard-review.prompt.md; prompts/closeout.prompt.md; PROJECT_STATE.md; AI_HANDOFF.md` | `completed` | `Optionally run cleanup verification or perform an authority-safe stale-control reconciliation pass.` |
+| `2026-06-29 12:30 America/Mexico_City` | `Codex` | `Created a durable dry-run validation report summarizing the full branch exercise, findings, and the planned reusable-template follow-up on development.` | `05_reports/dry-run-validation-report-2026-06-29.md; 05_reports/REPORT_INDEX.md` | `completed` | `Human review should confirm whether the recommended control-refresh improvement should be implemented on development.` |
 
 ## Update Rules
 

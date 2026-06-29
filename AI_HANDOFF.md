@@ -171,118 +171,153 @@ Every handoff must carry artifact-routing awareness forward so the next agent do
 
 ### Handoff Status
 
-`[Open | In Progress | Blocked | Complete | Superseded]`
+`Open`
 
 ### From
 
-`[Human / ChatGPT window / Codex / VS Code / Jupyter / Quarto / Other]`
+`Codex`
 
 ### To
 
-`[Human / ChatGPT window / Codex / VS Code / Jupyter / Quarto / Other]`
+`ChatGPT window / Codex / Human reviewer`
 
 ### Current Relay Task
 
-`[Describe the exact task the receiving session/tool should perform next.]`
+`Review the completed dry-run routing pass, decide whether to run cleanup verification, and determine whether stale control files should be reconciled outside closeout authority.`
 
 ### Mission Context
 
-`[Briefly summarize why this task matters. Keep aligned with CURRENT_MISSION.md.]`
+`This relay preserves the current dry-run validation state after mission initialization, native dummy artifact creation, dashboard review, and closeout drafting so the next session can continue without relying on chat memory.`
 
 ### What Was Completed
 
-- `[Completed item 1]`
-- `[Completed item 2]`
-- `[Completed item 3]`
+- `Initialized the dummy catalog search reliability mission baseline.`
+- `Registered dummy evidence items and one deprecated screenshot reference.`
+- `Registered dummy queries, notebook workflow, and derived outputs.`
+- `Created native dummy evidence, query, notebook, and output artifacts in their routed folders.`
+- `Completed a read-only dashboard review and a closeout draft.`
 
 ### What Changed
 
 | File / Area | Change | Status |
 |---|---|---|
-| `[Path or area]` | `[What changed]` | `[Done/In Progress/Needs Review]` |
+| `CURRENT_MISSION.md` | `Initialized with dummy mission scope and active action.` | `Done` |
+| `PROJECT_STATE.md` | `Initialized with supplied dummy facts, assumptions, and blind spots.` | `Done` |
+| `AI_CONTEXT.md` | `Initialized with routing-aware mission context.` | `Done` |
+| `01_context/` | `Initialized domain, vocabulary, system, topology, and context catalog state for the dummy mission.` | `Done` |
+| `02_evidence/` | `Registered dummy evidence and one deprecated screenshot reference.` | `Done` |
+| `03_queries/QUERY_REGISTRY.md` | `Registered draft, tested, and broken dummy queries.` | `Done` |
+| `04_notebooks/NOTEBOOK_INDEX.md` | `Registered dummy notebook workflow.` | `Done` |
+| `06_outputs/OUTPUT_INDEX.md` | `Registered dummy derived outputs.` | `Done` |
+| `02_evidence/, 03_queries/, 04_notebooks/, 06_outputs/` | `Created native dummy artifacts to match the registered routing paths.` | `Done` |
+| `Dashboard review` | `Completed diagnostically against the dummy dashboard export and linked artifacts.` | `Done` |
+| `Closeout draft` | `Completed diagnostically for the dry-run validation phase.` | `Done` |
 
 ### Files to Read First
 
 - `CURRENT_MISSION.md`
 - `PROJECT_STATE.md`
 - `AI_CONTEXT.md`
-- `[Add task-specific file]`
+- `02_evidence/EVIDENCE_INDEX.md`
+- `02_evidence/DEPRECATED_EVIDENCE.md`
+- `03_queries/QUERY_REGISTRY.md`
+- `04_notebooks/NOTEBOOK_INDEX.md`
+- `06_outputs/OUTPUT_INDEX.md`
+- `00_control/WORK_LOG.md`
+- `prompts/closeout.prompt.md`
 
 ### Files Likely to Update
 
-- `[Path 1]`
-- `[Path 2]`
+- `AI_HANDOFF.md`
+- `00_control/WORK_LOG.md`
+- `PROJECT_STATE.md`
+- `CURRENT_MISSION.md`
+- `AI_CONTEXT.md`
 
 ### Artifact Routing Status
 
-Artifact Routing Rules Active: `[Yes/No/Unknown]`
+Artifact Routing Rules Active: `Yes`
 
-Routing Source: `[AI_CONTEXT.md / README.md / Unknown]`
+Routing Source: `AI_CONTEXT.md`
 
-Evidence routing: `[State]`
+Evidence routing: `Active; evidence items are registered in 02_evidence registries with IDs E-0001 through E-0005 and now have native dummy files.`
 
-Query routing: `[State]`
+Query routing: `Active; queries are registered in 03_queries/QUERY_REGISTRY.md with IDs Q-0001 through Q-0004 and now have native dummy files.`
 
-Notebook routing: `[State]`
+Notebook routing: `Active; notebook work is registered in 04_notebooks/NOTEBOOK_INDEX.md as N-0001 and now has a native dummy notebook file.`
 
-Report routing: `[State]`
+Report routing: `No report artifacts created yet.`
 
-Output routing: `[State]`
+Output routing: `Active; outputs are registered in 06_outputs/OUTPUT_INDEX.md as O-0001 and O-0002 and now have native dummy files.`
 
-Decision routing: `[State]`
+Decision routing: `No new tactical or strategic decisions recorded yet.`
 
-Context routing: `[State]`
+Context routing: `Active; selected 01_context files were initialized during mission-init with strong supplied context.`
 
-Tool-notes routing: `[State]`
+Tool-notes routing: `No new tool-note updates proposed yet.`
 
-Workbench routing: `[State]`
+Workbench routing: `No workbench artifacts created yet.`
 
-Archive routing: `[State]`
+Archive routing: `No archive actions taken yet.`
 
-Automation routing: `[State]`
+Automation routing: `No automation artifacts created yet.`
 
 Artifacts created this session:
 
-- `[Path or None]`
+- `02_evidence/search-api-latency-sample-2026-06-29.ndjson`
+- `02_evidence/catalog-index-freshness-export-2026-06-29.csv`
+- `02_evidence/kibana-search-reliability-dashboard-2026-06-29.ndjson`
+- `02_evidence/stale-result-alert-screenshot-2026-06-29.png`
+- `02_evidence/stale-result-alert-screenshot-full-2026-06-29.png`
+- `03_queries/search-latency-percentiles.esql`
+- `03_queries/stale-result-alerts.kql`
+- `03_queries/freshness-bucket-summary.sql`
+- `03_queries/search-cluster-error-filter.lucene`
+- `04_notebooks/jupyter/search-latency-and-freshness-review.ipynb`
+- `06_outputs/search-latency-percentiles-2026-06-29.png`
+- `06_outputs/freshness-bucket-summary-2026-06-29.csv`
 
 Artifacts needing registration:
 
-- `[Path and target registry or None]`
+- `None`
 
 Routing concerns:
 
-- `[Concern or None]`
+- `CURRENT_MISSION.md` and parts of AI_CONTEXT.md still describe a pre-artifact state and should be reconciled by a later authority-safe pass.`
+- `The dashboard export is too thin to support trustworthy observability review beyond dry-run routing validation.`
 
 ### Open Issues / Blockers
 
-- `[Issue or blocker 1]`
-- `[Issue or blocker 2]`
+- `Cleanup verification has not been executed yet.`
+- `Control-layer staleness remains outside closeout prompt authority for CURRENT_MISSION.md and parts of AI_CONTEXT.md.`
+- `Dummy artifacts remain unvalidated for analytical correctness and are suitable only for workflow testing.`
 
 ### Warnings
 
-- `[Warning 1]`
-- `[Warning 2]`
+- `Do not treat any dummy artifact, query, notebook, or output as validated truth.`
+- `Keep all dry-run content on the disposable branch until cleanup verification is complete.`
 
 ### Proposed Context Follow-Ups
 
-- `[If durable domain, vocabulary, system, or topology context was discovered, name the target 01_context file and the reason. Otherwise write None.]`
+- `None`
 
 ### Exact Next Action
 
-`[One concrete next action for the receiving session/tool.]`
+`Decide whether to run cleanup verification on this dry-run branch or stop and review the branch as a workflow-validation sample.`
 
 ### Completion Criteria for This Handoff
 
 This handoff is complete when:
 
-- `[Condition 1]`
-- `[Condition 2]`
+- `The receiving session either runs cleanup verification or explicitly stops the dry-run branch.`
+- `Any desired control-layer reconciliation outside closeout authority is handled in a separate pass.`
 
 ## Handoff History
 
 | Local Date/Time | From | To | Relay Task | Status | Notes |
 |---|---|---|---|---|---|
-| `[YYYY-MM-DD HH:MM timezone]` | `[From]` | `[To]` | `[Short task summary]` | `[Open/Done/Blocked/Superseded]` | `[Notes]` |
+| `2026-06-29 11:20 America/Mexico_City` | `Codex` | `ChatGPT window / Codex / Human reviewer` | `Continue the dummy catalog search reliability dry-run after initialization, evidence, queries, and notebook/output linkage.` | `Open` | `Run handon before continuing.` |
+| `2026-06-29 12:05 America/Mexico_City` | `Codex` | `ChatGPT window / Codex / Human reviewer` | `Review the routing-complete dry-run branch after dashboard review and closeout drafting.` | `Open` | `Cleanup verification remains optional.` |
 
 ## Edit Authority
 

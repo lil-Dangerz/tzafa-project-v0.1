@@ -1,0 +1,1 @@
+service : "search-api" and event.category : "alert" and alert.reason : "stale_result"
