@@ -102,6 +102,10 @@ It must carry forward:
 
 It must not silently update registries unless the active prompt authority allows it.
 
+If the handoff reveals that `CURRENT_MISSION.md`, `PROJECT_STATE.md`, or `AI_CONTEXT.md` no longer match the actual branch state, do not silently ignore the mismatch.
+
+Refresh `AI_HANDOFF.md` within this prompt's authority and list any other required control refresh under `Proposed Follow-Up File Updates`.
+
 
 ## Required Response Format
 

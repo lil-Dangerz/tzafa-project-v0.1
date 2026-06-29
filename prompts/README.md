@@ -195,6 +195,34 @@ When applicable, prompts should also distinguish between:
 - direct file updates allowed by current prompt authority
 - follow-up context updates that require later human-approved changes to `01_context/`
 
+## Control Refresh Discipline
+
+Later prompt phases can materially change project state even when they do not own the full control layer.
+
+The control layer is:
+
+```text
+CURRENT_MISSION.md
+PROJECT_STATE.md
+AI_CONTEXT.md
+AI_HANDOFF.md
+```
+
+Examples of material state change:
+
+- new evidence changes confirmed truth or blind spots
+- query review changes what is known to work or fail
+- notebook review adds important outputs or reproducibility risk
+- decision work changes scope or approved direction
+- closeout changes mission phase or remaining work
+
+When a prompt materially changes project reality:
+
+- refresh the affected control files if the prompt is authorized
+- if the prompt is not authorized, list the required control refresh under `Proposed Follow-Up File Updates`
+
+Do not leave control files silently stale just because the active prompt has narrow authority.
+
 ## Controlled File Rule
 
 The following files are controlled:
@@ -210,6 +238,8 @@ TOOL_NOTES.md
 AI tools may edit or rewrite controlled files only when explicitly instructed and only within the authority of the prompt being used.
 
 If a prompt produces updates for controlled files, review them before accepting the changes.
+
+If a prompt cannot update a controlled file that now appears stale, it should explicitly propose the follow-up instead of ignoring the mismatch.
 
 ## Prompt Safety Rules
 

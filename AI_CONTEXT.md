@@ -28,6 +28,20 @@ It should be aligned with:
 
 If this file conflicts with `PROJECT_STATE.md`, treat `PROJECT_STATE.md` as the higher authority.
 
+## Refresh Trigger
+
+This file should also be refreshed after later phase work when the compact startup brief has materially changed.
+
+Examples:
+
+- evidence intake changes confirmed truth or blind spots
+- query review changes what is known to work, fail, or remain uncertain
+- notebook review changes reproducibility or output relationships
+- decision work changes scope or approved direction
+- closeout changes mission phase, remaining work, or handoff expectations
+
+If the active prompt is not authorized to update this file, record the needed refresh under `Proposed Follow-Up File Updates`.
+
 ## Source of Truth Rule
 
 The project folder is the source of truth.
@@ -273,6 +287,7 @@ AI tools must:
 - obey active prompt authority before updating any routing destination or registry
 - during initialization, allow selected `01_context/` updates only when supported by strong supplied sources
 - classify weak context as an assumption, open question, or proposed context update instead of verified context
+- refresh this file, or explicitly propose its refresh, when later phase work materially changes the startup brief
 - record important outputs back into project files
 - preserve uncertainty when evidence is incomplete
 

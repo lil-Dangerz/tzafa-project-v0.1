@@ -94,6 +94,7 @@ This mission is complete when:
 ## Update Rules
 
 - Update this file when the mission changes.
+- Refresh this file when the active phase, current confirmed action, or mission-completion state materially changes.
 - Do not use this file as scratch space.
 - Keep current mission separate from historical work.
 - If the objective changes, update `00_control/DECISION_LOG.md`.

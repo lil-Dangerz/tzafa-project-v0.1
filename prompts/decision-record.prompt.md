@@ -52,6 +52,19 @@ Use `07_decisions/ARCHITECTURE_DECISIONS.md` for strategic or long-term decision
 
 If destination is unclear, classify as `[Needs Human Routing]`.
 
+## Control Refresh Trigger
+
+Decision recording can materially change project direction even though this prompt cannot edit the full control layer.
+
+If the recorded decision changes mission scope, approved direction, active constraints, or handoff expectations, do not update controlled files from this prompt.
+
+Instead, list the needed refresh under `Proposed Follow-Up File Updates` for any affected file:
+
+- `CURRENT_MISSION.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+
 ## Decision Status Values
 
 Use one of:

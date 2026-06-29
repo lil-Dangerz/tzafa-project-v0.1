@@ -20,6 +20,19 @@ Useful supporting files may include:
 - `AI_CONTEXT.md`
 - `AI_HANDOFF.md`
 
+## Control Refresh Trigger
+
+Query review can materially change project understanding even though this prompt cannot edit the control layer.
+
+If query review changes what is known to work, fail, validate, or remain uncertain, do not update controlled files from this prompt.
+
+Instead, list the needed refresh under `Proposed Follow-Up File Updates` for any affected file:
+
+- `CURRENT_MISSION.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.

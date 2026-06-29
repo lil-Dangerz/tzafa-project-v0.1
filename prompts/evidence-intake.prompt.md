@@ -19,6 +19,19 @@ Useful supporting files may include:
 - `AI_CONTEXT.md`
 - `AI_HANDOFF.md`
 
+## Control Refresh Trigger
+
+Evidence intake can materially change project understanding even though this prompt cannot edit the control layer.
+
+If evidence intake changes confirmed truth, active blind spots, mission phase expectations, or handoff needs, do not update controlled files from this prompt.
+
+Instead, list the needed refresh under `Proposed Follow-Up File Updates` for any affected file:
+
+- `CURRENT_MISSION.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.

@@ -26,6 +26,19 @@ When available, also read:
 - `PROJECT_STATE.md`
 - `AI_CONTEXT.md`
 
+## Control Refresh Trigger
+
+Notebook review can materially change project understanding even though this prompt cannot edit the full control layer.
+
+If notebook review changes output relationships, reproducibility risk, phase expectations, or handoff needs, do not update controlled files from this prompt.
+
+Instead, list the needed refresh under `Proposed Follow-Up File Updates` for any affected file:
+
+- `CURRENT_MISSION.md`
+- `PROJECT_STATE.md`
+- `AI_CONTEXT.md`
+- `AI_HANDOFF.md`
+
 ## Prompt
 
 You are operating inside a Tzafa observability project folder.

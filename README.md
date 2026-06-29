@@ -27,6 +27,125 @@ The project folder is authoritative.
 
 Chat conversations are temporary working sessions. Any important conclusion, query, evidence status, decision, output, or handoff must be saved back into this folder.
 
+## Human Quickstart
+
+If you are using this template for the first time, use this order:
+
+1. Copy the template folder.
+2. Rename the copied folder for the real project.
+3. Open the copied folder in your editor or AI tool.
+4. Fill or refresh:
+
+```text
+CURRENT_MISSION.md
+PROJECT_STATE.md
+AI_CONTEXT.md
+```
+
+5. If useful, use:
+
+```text
+prompts/mission-init.prompt.md
+```
+
+to draft the starting baseline.
+
+6. After initialization, move into the next relevant phase:
+
+- evidence intake
+- query review
+- dashboard review
+- notebook review
+- decision recording
+- handoff
+- closeout
+
+7. After each major phase, review what changed before continuing.
+
+## Typical Operating Sequence
+
+Most real projects will follow a pattern close to this:
+
+```text
+mission-init
+evidence-intake
+query-review
+dashboard-review and/or notebook-review
+decision-record when needed
+handoff or closeout
+```
+
+Not every project uses every phase, and some projects loop through evidence, query, dashboard, and notebook work many times.
+
+## Human Checkpoint Rule
+
+When using AI assistance, pause after each major phase and review the changed files.
+
+Recommended checkpoints:
+
+- after mission initialization
+- after evidence intake
+- after query review
+- after notebook or dashboard review
+- before handoff
+- before closeout
+
+Do not assume a generated update is correct just because it looks well formatted.
+
+Check:
+
+- whether the right files were updated
+- whether the right registries were updated
+- whether assumptions were presented as facts
+- whether placeholders were mistaken for project truth
+- whether the next phase is really the correct one
+
+## Template, Instance, and Sandbox Rule
+
+Keep these three things separate:
+
+### Reusable template
+
+This repository on its reusable branches, such as `main`, `development`, or `staging`, is the template itself.
+
+It should contain:
+
+- reusable structure
+- reusable prompt rules
+- reusable examples
+- neutral placeholders
+
+It should not contain:
+
+- dummy project missions
+- fake evidence from a dry run
+- copied customer artifacts
+- project-instance truth
+
+### Real project instance
+
+A copied folder based on this template becomes a project instance.
+
+That instance is where real mission state, evidence, queries, notebooks, outputs, and handoffs should live.
+
+### Sandbox or dry-run branch
+
+If you want to test the template itself with dummy data, use a disposable branch or disposable copy.
+
+Do not merge dummy dry-run content back into the reusable template unless you are intentionally extracting only the reusable workflow improvement.
+
+## What Not To Do
+
+Do not:
+
+- leave important results only in chat
+- treat placeholders as verified project truth
+- assume a registry entry means something is validated
+- mix dummy QA content into the reusable template
+- assume every prompt can update every top-level control file
+- skip review just because an AI tool says the phase is complete
+- let stale control files remain unreviewed after major phase changes
+
 ## Watch Roles
 
 | File / Folder | Watch Role | Purpose |
@@ -153,6 +272,34 @@ as an assumption, open question, or proposed context update rather than verified
 After that, register evidence, queries, notebooks, reports, outputs, and decisions as they are created.
 
 Use the `Artifact Routing Brief` in `AI_CONTEXT.md` after initialization so agents know the default storage and registration destinations without requiring the human to restate every artifact path.
+
+## Control Refresh Rule
+
+Initialization creates the first control-layer baseline, but later phase work can change project reality enough that the baseline must be refreshed.
+
+Examples:
+
+- evidence intake confirms or invalidates project truth
+- query review changes what is known to work, fail, or remain uncertain
+- notebook review produces important outputs or exposes reproducibility risk
+- decision work changes scope, operating rules, or approved direction
+- closeout changes mission phase, closure state, or remaining work
+
+The control layer is:
+
+```text
+CURRENT_MISSION.md
+PROJECT_STATE.md
+AI_CONTEXT.md
+AI_HANDOFF.md
+```
+
+When later phase work materially changes project state:
+
+- refresh any affected control files if the active prompt is authorized to update them
+- if the active prompt is not authorized, record the needed control refresh under `Proposed Follow-Up File Updates`
+
+Do not leave control files silently stale after a material phase change.
 
 ## How to Use With ChatGPT
 
@@ -962,6 +1109,13 @@ Then update these as needed:
 6. `AI_HANDOFF.md`
 7. `TOOL_NOTES.md`
 
+Also refresh or propose refresh for:
+
+1. `CURRENT_MISSION.md` when the active phase or current confirmed action changes
+2. `PROJECT_STATE.md` when confirmed truth, known problems, or active blind spots materially change
+3. `AI_CONTEXT.md` when startup context, routing awareness, or current operating brief materially changes
+4. `AI_HANDOFF.md` when another session, tool, or reviewer must inherit the updated branch state
+
 ## Controlled File Edit Rule
 
 The following files are controlled:
@@ -979,6 +1133,8 @@ Humans may edit them directly.
 AI tools may edit them only when explicitly instructed.
 
 AI tools must not silently update project truth, mission scope, signal context, handoffs, or tool rules.
+
+AI tools must also not leave controlled files silently stale after later phase work materially changes project reality. If the active prompt cannot update the needed control file, the agent should propose an explicit follow-up refresh.
 
 ## Status
 

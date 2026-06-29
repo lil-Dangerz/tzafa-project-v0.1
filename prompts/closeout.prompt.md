@@ -70,6 +70,19 @@ If the mission or phase is closed but may need future reopening, preserve closur
 
 If follow-up work remains and another session must continue, run `handoff.prompt.md` after closeout. Closeout should not create a detailed outgoing relay.
 
+## Control Refresh Trigger
+
+Closeout commonly changes project reality enough that the control layer must be synchronized.
+
+Within this prompt's authority:
+
+- refresh `PROJECT_STATE.md` when closure changes confirmed current truth, known problems, validated assets, or remaining work
+- refresh `AI_HANDOFF.md` when continuation expectations, blockers, or next-step ownership changes
+
+If closeout also makes `CURRENT_MISSION.md` or `AI_CONTEXT.md` stale, do not update them from this prompt.
+
+Instead, list the needed refresh under `Proposed Follow-Up File Updates`.
+
 
 ## Required Response Format
 
